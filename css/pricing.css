@@ -1,0 +1,2916 @@
+
+
+.pricing-page {
+    --pricing-primary: #159C8D;
+    --pricing-primary-dark: #107D73;
+    --pricing-secondary: #F28C8C;
+    --pricing-accent: #F6C85F;
+    --pricing-bg: #F8FCFB;
+    --pricing-surface: #FFFFFF;
+    --pricing-surface-alt: #E8F6F3;
+    --pricing-text: #173B3A;
+    --pricing-muted: #607776;
+    --pricing-border: #DCECE8;
+    --pricing-shadow: 0 15px 45px rgba(20, 90, 80, 0.08);
+    --pricing-radius: 22px;
+
+    width: 100%;
+    overflow: hidden;
+    background: var(--pricing-bg);
+    color: var(--pricing-text);
+    font-family: "DM Sans", sans-serif;
+}
+
+.pricing-page *,
+.pricing-page *::before,
+.pricing-page *::after {
+    box-sizing: border-box;
+}
+
+.pricing-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.pricing-page a {
+    text-decoration: none;
+}
+
+.pricing-container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.pricing-page section {
+    position: relative;
+    padding: 85px 0;
+}
+
+.pricing-page h1,
+.pricing-page h2,
+.pricing-page h3,
+.pricing-page p {
+    margin-top: 0;
+}
+
+.pricing-page h1,
+.pricing-page h2,
+.pricing-page h3 {
+    color: var(--pricing-text);
+}
+
+.pricing-page p {
+    color: var(--pricing-muted);
+    line-height: 1.8;
+}
+
+.pricing-page a,
+.pricing-page button,
+.pricing-page summary {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.pricing-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    color: var(--pricing-primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.pricing-eyebrow::before {
+    width: 24px;
+    height: 2px;
+    background: var(--pricing-secondary);
+    content: "";
+}
+
+
+
+.pricing-page .pricing-btn,
+.pricing-page .therapy-pricing-btn,
+.pricing-page .pricing-package-link,
+.pricing-page .pricing-support-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 13px 22px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    transition: background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.pricing-page .pricing-btn-primary {
+    color: #FFFFFF;
+    background: var(--pricing-primary);
+    box-shadow: 0 8px 22px rgba(21, 156, 141, 0.2);
+}
+
+.pricing-page .pricing-btn-primary:hover {
+    color: #FFFFFF;
+    background: var(--pricing-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(21, 156, 141, 0.25);
+}
+
+.pricing-page .pricing-btn-outline {
+    color: var(--pricing-primary);
+    background: var(--pricing-surface);
+    border-color: 1px solid var(--pricing-primary);
+}
+
+.pricing-page .pricing-btn-outline:hover {
+    color: var(--pricing-primary-dark);
+    border-color: var(--pricing-primary);
+    transform: translateY(-2px);
+}
+
+.pricing-page .pricing-btn i,
+.pricing-page .therapy-pricing-btn i,
+.pricing-page .pricing-package-link i,
+.pricing-page .pricing-support-btn i {
+    transition: transform 0.25s ease;
+}
+
+.pricing-page .pricing-btn:hover i,
+.pricing-page .therapy-pricing-btn:hover i,
+.pricing-page .pricing-package-link:hover i,
+.pricing-page .pricing-support-btn:hover i {
+    transform: translateX(4px);
+}
+
+
+
+.pricing-hero {
+    padding-top: 110px !important;
+    padding-bottom: 90px !important;
+    background:
+        radial-gradient(
+            circle at 5% 10%,
+            rgba(21, 156, 141, 0.09),
+            transparent 34%
+        ),
+        var(--pricing-bg);
+}
+
+.pricing-hero .pricing-container {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.pricing-hero-content {
+    max-width: 590px;
+}
+
+.pricing-hero-content h1 {
+    max-width: 580px;
+    margin-bottom: 22px;
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.7px;
+}
+
+.pricing-hero-content h1 span,
+.pricing-section-heading h2 span,
+.pricing-assessment-content h2 span,
+.pricing-cta-content h2 span {
+    color: var(--pricing-primary);
+}
+
+.pricing-hero-content > p {
+    max-width: 510px;
+    margin-bottom: 28px;
+    font-size: 15px;
+}
+
+.pricing-hero-actions,
+.pricing-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 13px;
+}
+
+.pricing-trust-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    color: var(--pricing-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.pricing-trust-note i {
+    color: var(--pricing-secondary);
+    font-size: 18px;
+}
+
+.pricing-hero-image {
+    position: relative;
+    min-width: 0;
+    padding: 0 0 24px 24px;
+}
+
+.pricing-hero-image::before {
+    position: absolute;
+    top: -20px;
+    right: -15px;
+    z-index: 0;
+    width: 130px;
+    height: 130px;
+    border: 2px dashed rgba(21, 156, 141, 0.35);
+    border-radius: 50%;
+    content: "";
+}
+
+.pricing-hero-image > img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 28px;
+    box-shadow: var(--pricing-shadow);
+}
+
+.pricing-image-note {
+    position: absolute;
+    right: -18px;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: 310px;
+    padding: 18px 22px;
+    background: var(--pricing-surface);
+    border: 1px solid var(--pricing-border);
+    border-radius: 16px;
+    box-shadow: var(--pricing-shadow);
+}
+
+.pricing-image-note > i {
+    display: grid;
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    color: var(--pricing-primary);
+    background: var(--pricing-surface-alt);
+    border-radius: 12px;
+    font-size: 21px;
+}
+
+.pricing-image-note h3 {
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.pricing-image-note p {
+    margin-bottom: 0;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+
+.pricing-section-heading {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.pricing-section-heading .pricing-eyebrow {
+    justify-content: center;
+}
+
+.pricing-section-heading h2,
+.pricing-assessment-content h2,
+.pricing-cta-content h2 {
+    margin-bottom: 18px;
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(29px, 3.4vw, 43px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.7px;
+}
+
+.pricing-section-heading > p {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+
+
+.pricing-intro {
+    padding-top: 45px !important;
+    padding-bottom: 40px !important;
+    background: var(--pricing-surface);
+}
+
+.pricing-intro .pricing-section-heading {
+    margin-bottom: 0;
+}
+
+
+.therapy-pricing {
+    background: var(--pricing-bg);
+}
+
+.therapy-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.therapy-pricing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 32px;
+    background: var(--pricing-surface);
+    border: 1px solid var(--pricing-border);
+    border-radius: var(--pricing-radius);
+    box-shadow: 0 8px 28px rgba(20, 90, 80, 0.035);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.therapy-pricing-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(21, 156, 141, 0.55);
+    box-shadow: var(--pricing-shadow);
+}
+
+.therapy-pricing-card.featured {
+    border: 2px solid var(--pricing-primary);
+    box-shadow: 0 14px 38px rgba(21, 156, 141, 0.1);
+}
+
+.therapy-pricing-badge {
+    position: absolute;
+    top: 0;
+    right: 24px;
+    padding: 8px 13px;
+    color: #FFFFFF;
+    background: var(--pricing-primary);
+    border-radius: 0 0 9px 9px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.therapy-pricing-icon {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 22px;
+    place-items: center;
+    color: var(--pricing-primary);
+    background: var(--pricing-surface-alt);
+    border-radius: 16px;
+    font-size: 24px;
+}
+
+.therapy-pricing-label {
+    margin-bottom: 9px;
+    color: var(--pricing-secondary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.therapy-pricing-card h3 {
+    margin-bottom: 13px;
+    font-family: "Nunito", sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.therapy-pricing-card > p {
+    margin-bottom: 23px;
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+.therapy-pricing-features {
+    display: grid;
+    gap: 14px;
+    margin: 0 0 26px;
+    padding: 0;
+    list-style: none;
+}
+
+.therapy-pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    color: var(--pricing-muted);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.therapy-pricing-features li i {
+    margin-top: 3px;
+    color: var(--pricing-primary);
+    font-size: 13px;
+}
+
+.therapy-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    padding: 18px 0;
+    border-top: 1px solid var(--pricing-border);
+}
+
+.therapy-price span {
+    color: var(--pricing-muted);
+    font-size: 12px;
+}
+
+.therapy-price strong {
+    color: var(--pricing-primary);
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.pricing-page .therapy-pricing-btn {
+    width: 100%;
+    margin-top: 0;
+    color: #FFFFFF;
+    background: var(--pricing-primary);
+}
+
+.pricing-page .therapy-pricing-btn:hover {
+    color: #FFFFFF;
+    background: var(--pricing-primary-dark);
+}
+
+
+.pricing-assessment {
+    background: var(--pricing-surface-alt);
+}
+
+.pricing-assessment-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.pricing-assessment-content h2 {
+    font-size: clamp(29px, 3.2vw, 40px);
+}
+
+.pricing-assessment-content > p {
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.pricing-assessment-list {
+    display: grid;
+    gap: 15px;
+    margin: 0 0 30px;
+    padding: 0;
+    list-style: none;
+}
+
+.pricing-assessment-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--pricing-text);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.pricing-assessment-list li i {
+    flex: 0 0 auto;
+    margin-top: 3px;
+    color: var(--pricing-primary);
+}
+
+.pricing-assessment-image {
+    position: relative;
+    min-width: 0;
+}
+
+.pricing-assessment-image::after {
+    position: absolute;
+    right: -14px;
+    bottom: -14px;
+    z-index: 0;
+    width: 45%;
+    height: 45%;
+    background: var(--pricing-secondary);
+    border-radius: 20px;
+    opacity: 0.35;
+    content: "";
+}
+
+.pricing-assessment-image img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 410px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: var(--pricing-shadow);
+}
+
+
+.pricing-packages {
+    background: var(--pricing-surface);
+}
+
+.pricing-packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 23px;
+    align-items: stretch;
+}
+
+.pricing-package-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 30px 26px;
+    background: var(--pricing-bg);
+    border: 1px solid var(--pricing-border);
+    border-radius: 20px;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.pricing-package-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--pricing-primary);
+    box-shadow: var(--pricing-shadow);
+}
+
+.pricing-package-icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 22px;
+    place-items: center;
+    color: var(--pricing-primary);
+    background: var(--pricing-surface-alt);
+    border-radius: 14px;
+    font-size: 22px;
+}
+
+.pricing-package-card h3 {
+    margin-bottom: 12px;
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.pricing-package-card > p {
+    flex-grow: 1;
+    margin-bottom: 22px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.pricing-package-price {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--pricing-primary);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.pricing-page .pricing-package-link {
+    justify-content: space-between;
+    width: 100%;
+    padding: 13px 15px;
+    color: var(--pricing-primary);
+    background: var(--pricing-surface);
+    border-color: var(--pricing-border);
+    font-size: 12px;
+}
+
+.pricing-page .pricing-package-link:hover {
+    color: #FFFFFF;
+    background: var(--pricing-primary);
+    border-color: var(--pricing-primary);
+}
+
+.pricing-package-note {
+    max-width: 760px;
+    margin: 30px auto 0;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+.pricing-benefits {
+    background: var(--pricing-bg);
+}
+
+.pricing-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.pricing-benefit-card {
+    min-width: 0;
+    padding: 28px 22px;
+    background: var(--pricing-surface);
+    border: 1px solid var(--pricing-border);
+    border-radius: 18px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.pricing-benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--pricing-shadow);
+}
+
+.pricing-benefit-card > i {
+    display: grid;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    place-items: center;
+    color: var(--pricing-primary);
+    background: var(--pricing-surface-alt);
+    border-radius: 14px;
+    font-size: 21px;
+}
+
+.pricing-benefit-card h3 {
+    margin-bottom: 12px;
+    font-family: "Nunito", sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.pricing-benefit-card p {
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+
+.pricing-faq {
+    background: var(--pricing-surface);
+}
+
+.pricing-faq-list {
+    display: grid;
+    gap: 14px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.pricing-faq-item {
+    overflow: hidden;
+    background: var(--pricing-bg);
+    border: 1px solid var(--pricing-border);
+    border-radius: 14px;
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.pricing-faq-item[open] {
+    border-color: var(--pricing-primary);
+    box-shadow: 0 8px 24px rgba(20, 90, 80, 0.05);
+}
+
+.pricing-faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  
+    color: var(--pricing-text);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.6;
+    list-style: none;
+}
+
+.pricing-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.pricing-faq-item summary::marker {
+    display: none;
+    content: "";
+}
+
+.pricing-faq-item summary i {
+    display: grid;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    color: var(--pricing-primary);
+    background: var(--pricing-surface-alt);
+    border-radius: 50%;
+    font-size: 11px;
+    transition: transform 0.25s ease;
+}
+
+.pricing-faq-item[open] summary i {
+    transform: rotate(45deg);
+}
+
+.pricing-faq-answer {
+    padding: 0 24px 22px;
+}
+
+.pricing-faq-answer p {
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+
+.pricing-support {
+    background: var(--pricing-surface-alt);
+}
+
+.pricing-support-content {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 35px;
+    background: var(--pricing-surface);
+    border: 1px solid var(--pricing-border);
+    border-radius: 22px;
+    box-shadow: var(--pricing-shadow);
+}
+
+.pricing-support-icon {
+    display: grid;
+    flex: 0 0 60px;
+    width: 60px;
+    height: 60px;
+    place-items: center;
+    color: var(--pricing-primary);
+    background: var(--pricing-surface-alt);
+    border-radius: 17px;
+    font-size: 25px;
+}
+
+.pricing-support-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.pricing-support-text h2 {
+    margin-bottom: 8px;
+    font-family: "Nunito", sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.pricing-support-text p {
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.pricing-page .pricing-support-btn {
+    flex-shrink: 0;
+    color: #FFFFFF;
+    background: var(--pricing-primary);
+}
+
+.pricing-page .pricing-support-btn:hover {
+    color: #FFFFFF;
+    background: var(--pricing-primary-dark);
+}
+
+
+.pricing-cta {
+    padding: 90px 0 !important;
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(242, 140, 140, 0.14),
+            transparent 32%
+        ),
+        linear-gradient(135deg, #123B39, #0C2928);
+}
+
+.pricing-cta-content {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pricing-cta-content .pricing-eyebrow {
+    color: #8DE0D4;
+}
+
+.pricing-cta-content h2 {
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    font-size: clamp(31px, 4vw, 46px);
+}
+
+.pricing-cta-content h2 span {
+    color: #8DE0D4;
+}
+
+.pricing-cta-content > p {
+    max-width: 620px;
+    margin: 0 auto 30px;
+    color: #D0E4E0;
+    font-size: 14px;
+}
+
+.pricing-cta-actions {
+    justify-content: center;
+}
+
+.pricing-cta .pricing-btn-primary {
+    color: #103D38;
+    background: #8DE0D4;
+    box-shadow: none;
+}
+
+.pricing-cta .pricing-btn-primary:hover {
+    color: #103D38;
+    background: #B5F0E7;
+}
+
+.pricing-cta .pricing-btn-outline {
+    color: #FFFFFF;
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.pricing-cta .pricing-btn-outline:hover {
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #8DE0D4;
+}
+
+
+.dark .pricing-page,
+body.dark .pricing-page,
+[data-theme="dark"] .pricing-page {
+    --pricing-bg: #071A1D;
+    --pricing-surface: #0E292D;
+    --pricing-surface-alt: #14383D;
+    --pricing-text: #F1FAF8;
+    --pricing-muted: #B2C9C6;
+    --pricing-border: #285054;
+    --pricing-primary: #18B5A4;
+    --pricing-primary-dark: #12998B;
+    --pricing-secondary: #F39A9A;
+    --pricing-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.dark .pricing-hero,
+body.dark .pricing-hero,
+[data-theme="dark"] .pricing-hero {
+    background:
+        radial-gradient(
+            circle at 5% 10%,
+            rgba(24, 181, 164, 0.12),
+            transparent 34%
+        ),
+        var(--pricing-bg);
+}
+
+.dark .pricing-cta,
+body.dark .pricing-cta,
+[data-theme="dark"] .pricing-cta {
+    background: linear-gradient(135deg, #061517, #0D302F);
+}
+
+.dark .pricing-cta-content h2,
+body.dark .pricing-cta-content h2,
+[data-theme="dark"] .pricing-cta-content h2 {
+    color: #FFFFFF;
+}
+
+.dark .pricing-cta-content > p,
+body.dark .pricing-cta-content > p,
+[data-theme="dark"] .pricing-cta-content > p {
+    color: #D0E4E0;
+}
+
+.dark .pricing-cta .pricing-btn-outline,
+body.dark .pricing-cta .pricing-btn-outline,
+[data-theme="dark"] .pricing-cta .pricing-btn-outline {
+    color: #FFFFFF;
+}
+
+.dark .pricing-page .pricing-btn-outline,
+body.dark .pricing-page .pricing-btn-outline,
+[data-theme="dark"] .pricing-page .pricing-btn-outline {
+    color: var(--pricing-text);
+    background: var(--pricing-surface);
+    border-color: var(--pricing-border);
+}
+
+.dark .pricing-page .pricing-package-link,
+body.dark .pricing-page .pricing-package-link,
+[data-theme="dark"] .pricing-page .pricing-package-link {
+    color: var(--pricing-primary);
+    background: var(--pricing-surface);
+    border-color: var(--pricing-border);
+}
+
+
+
+.rtl .pricing-page,
+body.rtl .pricing-page,
+[dir="rtl"] .pricing-page {
+    direction: rtl;
+    text-align: right;
+}
+
+.rtl .pricing-eyebrow::before,
+body.rtl .pricing-eyebrow::before,
+[dir="rtl"] .pricing-eyebrow::before {
+    order: 1;
+}
+
+.rtl .pricing-section-heading,
+body.rtl .pricing-section-heading,
+[dir="rtl"] .pricing-section-heading {
+    text-align: center;
+}
+
+.rtl .pricing-hero-image,
+body.rtl .pricing-hero-image,
+[dir="rtl"] .pricing-hero-image {
+    padding: 0 24px 24px 0;
+}
+
+.rtl .pricing-image-note,
+body.rtl .pricing-image-note,
+[dir="rtl"] .pricing-image-note {
+    right: auto;
+    left: -18px;
+}
+
+.rtl .therapy-pricing-badge,
+body.rtl .therapy-pricing-badge,
+[dir="rtl"] .therapy-pricing-badge {
+    right: auto;
+    left: 24px;
+}
+
+.rtl .pricing-page .pricing-btn i,
+.rtl .pricing-page .therapy-pricing-btn i,
+.rtl .pricing-page .pricing-package-link i,
+.rtl .pricing-page .pricing-support-btn i,
+body.rtl .pricing-page .pricing-btn i,
+body.rtl .pricing-page .therapy-pricing-btn i,
+body.rtl .pricing-page .pricing-package-link i,
+body.rtl .pricing-page .pricing-support-btn i,
+[dir="rtl"] .pricing-page .pricing-btn i,
+[dir="rtl"] .pricing-page .therapy-pricing-btn i,
+[dir="rtl"] .pricing-page .pricing-package-link i,
+[dir="rtl"] .pricing-page .pricing-support-btn i {
+    transform: scaleX(-1);
+}
+
+.rtl .pricing-page .pricing-btn:hover i,
+.rtl .pricing-page .therapy-pricing-btn:hover i,
+.rtl .pricing-page .pricing-package-link:hover i,
+.rtl .pricing-page .pricing-support-btn:hover i,
+body.rtl .pricing-page .pricing-btn:hover i,
+body.rtl .pricing-page .therapy-pricing-btn:hover i,
+body.rtl .pricing-page .pricing-package-link:hover i,
+body.rtl .pricing-page .pricing-support-btn:hover i,
+[dir="rtl"] .pricing-page .pricing-btn:hover i,
+[dir="rtl"] .pricing-page .therapy-pricing-btn:hover i,
+[dir="rtl"] .pricing-page .pricing-package-link:hover i,
+[dir="rtl"] .pricing-page .pricing-support-btn:hover i {
+    transform: scaleX(-1) translateX(4px);
+}
+
+.rtl .pricing-hero-content,
+body.rtl .pricing-hero-content,
+[dir="rtl"] .pricing-hero-content {
+    text-align: right;
+}
+
+.rtl .pricing-hero-actions,
+.rtl .pricing-cta-actions,
+body.rtl .pricing-hero-actions,
+body.rtl .pricing-cta-actions,
+[dir="rtl"] .pricing-hero-actions,
+[dir="rtl"] .pricing-cta-actions {
+    justify-content: flex-start;
+}
+
+.rtl .pricing-trust-note,
+.rtl .pricing-assessment-list li,
+.rtl .therapy-pricing-features li,
+body.rtl .pricing-trust-note,
+body.rtl .pricing-assessment-list li,
+body.rtl .therapy-pricing-features li,
+[dir="rtl"] .pricing-trust-note,
+[dir="rtl"] .pricing-assessment-list li,
+[dir="rtl"] .therapy-pricing-features li {
+    flex-direction: row;
+}
+
+.rtl .pricing-support-content,
+body.rtl .pricing-support-content,
+[dir="rtl"] .pricing-support-content {
+    text-align: right;
+}
+
+.rtl .pricing-faq-item summary,
+body.rtl .pricing-faq-item summary,
+[dir="rtl"] .pricing-faq-item summary {
+    text-align: right;
+}
+
+
+@media (max-width: 1024px) {
+    .pricing-page section {
+        padding: 70px 0;
+    }
+
+    .pricing-hero {
+        padding-top: 95px !important;
+    }
+
+    .pricing-hero .pricing-container {
+        gap: 38px;
+    }
+
+    .pricing-hero-image > img {
+        height: 380px;
+    }
+
+    .pricing-assessment-grid {
+        gap: 40px;
+    }
+
+    .pricing-assessment-image img {
+        height: 370px;
+    }
+
+    .pricing-benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pricing-packages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pricing-support-content {
+        flex-wrap: wrap;
+    }
+
+    .pricing-support-text {
+        flex-basis: calc(100% - 90px);
+    }
+
+    .pricing-page .pricing-support-btn {
+        margin-left: 82px;
+    }
+
+    .rtl .pricing-page .pricing-support-btn,
+    body.rtl .pricing-page .pricing-support-btn,
+    [dir="rtl"] .pricing-page .pricing-support-btn {
+        margin-right: 82px;
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .pricing-container {
+        width: min(100% - 36px, 560px);
+    }
+
+    .pricing-page section {
+        padding: 58px 0;
+    }
+
+    .pricing-hero {
+        padding-top: 85px !important;
+        padding-bottom: 65px !important;
+    }
+
+    .pricing-hero .pricing-container,
+    .pricing-assessment-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .pricing-hero-content {
+        max-width: 100%;
+    }
+
+    .pricing-hero-content h1 {
+        font-size: clamp(34px, 8vw, 46px);
+        letter-spacing: -1px;
+    }
+
+    .pricing-hero-content > p {
+        font-size: 14px;
+    }
+
+    .pricing-hero-image {
+        padding: 0 12px 22px 0;
+    }
+
+    .pricing-hero-image > img {
+        height: 350px;
+        border-radius: 22px;
+    }
+
+    .pricing-hero-image::before {
+        right: -5px;
+        width: 95px;
+        height: 95px;
+    }
+
+    .pricing-image-note {
+        right: -2px;
+        max-width: 280px;
+        padding: 14px;
+    }
+
+    .pricing-section-heading {
+        margin-bottom: 34px;
+    }
+
+    .pricing-section-heading h2,
+    .pricing-assessment-content h2 {
+        font-size: 30px;
+    }
+
+    .pricing-section-heading > p {
+        font-size: 13px;
+    }
+
+    .pricing-intro {
+        padding-top: 35px !important;
+        padding-bottom: 35px !important;
+    }
+
+    .therapy-pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .therapy-pricing-card {
+        padding: 26px 23px;
+    }
+
+    .therapy-pricing-card h3 {
+        font-size: 21px;
+    }
+
+    .pricing-assessment-grid {
+        gap: 30px;
+    }
+
+    .pricing-assessment-image {
+        order: 2;
+    }
+
+    .pricing-assessment-image img {
+        height: 310px;
+    }
+
+    .pricing-packages-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .pricing-package-card {
+        padding: 25px 23px;
+    }
+
+    .pricing-benefits-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .pricing-benefit-card {
+        padding: 22px 17px;
+    }
+
+    .pricing-benefit-card h3 {
+        font-size: 15px;
+    }
+
+    .pricing-benefit-card p {
+        font-size: 12px;
+    }
+
+    .pricing-faq-item summary {
+        padding: 18px;
+        font-size: 13px;
+    }
+
+    .pricing-faq-answer {
+        padding: 0 18px 18px;
+    }
+
+    .pricing-support-content {
+        align-items: flex-start;
+        gap: 16px;
+        padding: 24px 20px;
+    }
+
+    .pricing-support-icon {
+        flex-basis: 46px;
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
+    }
+
+    .pricing-support-text {
+        flex-basis: calc(100% - 65px);
+    }
+
+    .pricing-support-text h2 {
+        font-size: 18px;
+    }
+
+    .pricing-support-text p {
+        font-size: 12px;
+    }
+
+    .pricing-page .pricing-support-btn {
+        width: 100%;
+        margin: 6px 0 0;
+    }
+
+    .rtl .pricing-page .pricing-support-btn,
+    body.rtl .pricing-page .pricing-support-btn,
+    [dir="rtl"] .pricing-page .pricing-support-btn {
+        margin: 6px 0 0;
+    }
+
+    .pricing-cta {
+        padding: 65px 0 !important;
+    }
+
+    .pricing-cta-content h2 {
+        font-size: 32px;
+    }
+
+    .pricing-cta-content > p {
+        font-size: 13px;
+    }
+
+    .pricing-hero-actions,
+    .pricing-cta-actions {
+        align-items: stretch;
+    }
+
+    .pricing-page .pricing-hero-actions .pricing-btn,
+    .pricing-page .pricing-cta-actions .pricing-btn {
+        flex: 1 1 100%;
+    }
+
+    .rtl .pricing-hero-image,
+    body.rtl .pricing-hero-image,
+    [dir="rtl"] .pricing-hero-image {
+        padding: 0 0 22px 12px;
+    }
+
+    .rtl .pricing-image-note,
+    body.rtl .pricing-image-note,
+    [dir="rtl"] .pricing-image-note {
+        right: auto;
+        left: -2px;
+    }
+}
+
+
+
+@media (max-width: 420px) {
+    .pricing-container {
+        width: calc(100% - 28px);
+    }
+
+    .pricing-page section {
+        padding: 48px 0;
+    }
+
+    .pricing-hero {
+        padding-top: 75px !important;
+    }
+
+    .pricing-hero-content h1 {
+        font-size: 32px;
+    }
+
+    .pricing-hero-image > img {
+        height: 280px;
+    }
+
+    .pricing-image-note {
+        max-width: 245px;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .pricing-image-note > i {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .pricing-image-note h3 {
+        font-size: 12px;
+    }
+
+    .pricing-image-note p {
+        font-size: 10px;
+    }
+
+    .pricing-section-heading h2,
+    .pricing-assessment-content h2 {
+        font-size: 27px;
+    }
+
+    .therapy-pricing-card {
+        padding: 23px 18px;
+    }
+
+    .therapy-pricing-card h3 {
+        font-size: 20px;
+    }
+
+    .pricing-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-benefit-card {
+        padding: 22px;
+    }
+
+    .pricing-cta-content h2 {
+        font-size: 28px;
+    }
+
+    .pricing-page .pricing-btn,
+    .pricing-page .therapy-pricing-btn,
+    .pricing-page .pricing-package-link,
+    .pricing-page .pricing-support-btn {
+        font-size: 12px;
+    }
+}
+
+
+.pricing-page a:focus-visible,
+.pricing-page summary:focus-visible {
+    outline: 3px solid var(--pricing-secondary);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pricing-page *,
+    .pricing-page *::before,
+    .pricing-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.pricing-page {
+    width: 100%;
+    overflow: hidden;
+    background: var(--bg, #F8FCFB);
+    color: var(--text, #173B3A);
+}
+
+.pricing-page *,
+.pricing-page *::before,
+.pricing-page *::after {
+    box-sizing: border-box;
+}
+
+.pricing-container {
+    width: min(1160px, 92%);
+    margin: 0 auto;
+}
+
+.pricing-page .section-spacing {
+    padding: 85px 0;
+}
+
+.pricing-section-heading {
+    max-width: 700px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.pricing-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #159C8D;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.pricing-section-heading h2 {
+    margin: 0 0 16px;
+    color: var(--text, #173B3A);
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.pricing-section-heading h2 span {
+    color: #159C8D;
+}
+
+.pricing-section-heading p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--muted, #607776);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+.therapy-pricing {
+    padding: 85px 0;
+    background: #F8FCFB;
+}
+
+.therapy-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 26px;
+    width: 100%;
+}
+
+.therapy-pricing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 34px 28px 30px;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid #DCECE8;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(23, 59, 58, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.therapy-pricing-card:hover {
+    transform: translateY(-6px);
+    border-color: #159C8D;
+    box-shadow: 0 16px 36px rgba(21, 156, 141, 0.12);
+}
+
+.therapy-pricing-card.featured {
+    border: 2px solid #159C8D;
+    box-shadow: 0 14px 35px rgba(21, 156, 141, 0.12);
+}
+
+.therapy-pricing-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    max-width: 100%;
+    margin-bottom: 18px;
+    padding: 7px 13px;
+    color: #FFFFFF;
+    background: #159C8D;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    line-height: 1.4;
+}
+
+.therapy-pricing-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 22px;
+    flex-shrink: 0;
+    color: #128F82;
+    background: #E8F6F3;
+    border-radius: 15px;
+    font-size: 25px;
+}
+
+.therapy-pricing-label {
+    margin: 0 0 12px;
+    color: #173B3A;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.therapy-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+    margin: 0 0 10px;
+    color: #128F82;
+    font-size: clamp(28px, 2.5vw, 36px);
+    font-weight: 800;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.therapy-price span {
+    color: #607776;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.therapy-pricing-card > p {
+    margin: 0 0 24px;
+    color: #607776;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+
+
+.therapy-pricing-features {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 10px 0 28px;
+    padding: 0;
+    list-style: none;
+}
+
+.therapy-pricing-features li {
+    position: relative;
+    padding-left: 27px;
+    color: #435F5D;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.therapy-pricing-features li::before {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    content: "✓";
+    color: #128F82;
+    background: #E8F6F3;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+
+
+.therapy-pricing-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    margin-top: auto;
+    padding: 13px 18px;
+    color: #128F82;
+    background: #FFFFFF;
+    border: 1.5px solid #159C8D;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: background 0.25s ease, color 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.therapy-pricing-btn:hover {
+    color: #FFFFFF;
+    background: #128F82;
+    border-color: #128F82;
+}
+
+.therapy-pricing-card.featured .therapy-pricing-btn {
+    color: #FFFFFF;
+    background: #159C8D;
+    border-color: #159C8D;
+}
+
+.therapy-pricing-card.featured .therapy-pricing-btn:hover {
+    background: #10796F;
+    border-color: #10796F;
+}
+
+
+
+.pricing-package-note {
+    max-width: 780px;
+    margin: 28px auto 0;
+    color: #607776;
+    font-size: 12px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+
+.pricing-hero {
+    padding: 85px 0;
+    background: #E8F6F3;
+}
+
+.pricing-hero-content {
+  
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 22px;
+}
+
+.pricing-hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.pricing-image-note,
+.pricing-trust-note {
+    color: #607776;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.pricing-hero-actions,
+.pricing-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.pricing-assessment {
+    padding: 80px 0;
+    background: #FFFFFF;
+}
+
+.pricing-assessment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 45px;
+}
+
+.pricing-assessment-content {
+    min-width: 0;
+}
+
+.pricing-assessment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-left: 22px;
+    color: #435F5D;
+    line-height: 1.8;
+}
+
+.pricing-assessment-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    max-height: 430px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.pricing-packages {
+    padding: 80px 0;
+    background: #F8FCFB;
+}
+
+.pricing-packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+}
+
+.pricing-package-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 28px;
+    background: #FFFFFF;
+    border: 1px solid #DCECE8;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(23, 59, 58, 0.05);
+}
+
+.pricing-package-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    color: #128F82;
+    background: #E8F6F3;
+    border-radius: 14px;
+    font-size: 23px;
+}
+
+.pricing-package-price {
+    margin: 12px 0;
+    color: #128F82;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.pricing-package-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 20px;
+    color: #128F82;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.pricing-package-link:hover {
+    text-decoration: underline;
+}
+
+.pricing-benefits {
+    padding: 80px 0;
+    background: #E8F6F3;
+}
+
+.pricing-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.pricing-benefit-card {
+    padding: 26px;
+    background: #FFFFFF;
+    border: 1px solid #DCECE8;
+    border-radius: 15px;
+}
+
+.pricing-benefit-card h3 {
+    margin: 0 0 12px;
+    color: #173B3A;
+    font-size: 18px;
+    line-height: 1.45;
+}
+
+.pricing-benefit-card p {
+    margin: 0;
+    color: #607776;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.pricing-faq {
+    padding: 80px 0;
+    background: #FFFFFF;
+}
+
+.pricing-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.pricing-faq-item {
+    padding: 20px 22px;
+    background: #F8FCFB;
+    border: 1px solid #DCECE8;
+    border-radius: 12px;
+}
+
+.pricing-faq-item summary {
+    color: #173B3A;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.7;
+    cursor: pointer;
+}
+
+.pricing-faq-answer {
+    padding-top: 12px;
+    color: #607776;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.pricing-support {
+    padding: 35px 0;
+    background: #E8F6F3;
+}
+
+.pricing-support-content {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 28px;
+    background: #FFFFFF;
+    border: 1px solid #DCECE8;
+    border-radius: 16px;
+}
+
+.pricing-support-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    color: #128F82;
+    background: #E8F6F3;
+    border-radius: 14px;
+    font-size: 23px;
+}
+
+.pricing-support-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.pricing-support-text h3 {
+    margin: 0 0 8px;
+    color: #173B3A;
+    font-size: 19px;
+}
+
+.pricing-support-text p {
+    margin: 0;
+    color: #607776;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.pricing-support-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 12px 20px;
+    color: #FFFFFF;
+    background: #159C8D;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+}
+
+.pricing-support-btn:hover {
+    background: #10796F;
+}
+
+.pricing-cta {
+    padding: 75px 0;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #123B39, #0C2928);
+}
+
+.pricing-cta-content {
+    text-align: center;
+}
+
+.pricing-cta h2 {
+    margin: 0 0 16px;
+    color: #FFFFFF;
+    font-size: clamp(27px, 4vw, 38px);
+    line-height: 1.35;
+}
+
+.pricing-cta p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: #D0E7E2;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.pricing-cta-actions {
+    justify-content: center;
+}
+
+
+body.dark .pricing-page,
+.dark .pricing-page,
+[data-theme="dark"] .pricing-page {
+    color: #EAF7F4;
+    background: #071A1D;
+}
+
+body.dark .therapy-pricing,
+.dark .therapy-pricing,
+[data-theme="dark"] .therapy-pricing,
+body.dark .pricing-packages,
+.dark .pricing-packages,
+[data-theme="dark"] .pricing-packages,
+body.dark .pricing-faq,
+.dark .pricing-faq,
+[data-theme="dark"] .pricing-faq {
+    background: #071A1D;
+}
+
+body.dark .pricing-assessment,
+.dark .pricing-assessment,
+[data-theme="dark"] .pricing-assessment {
+    background: #0E292D;
+}
+
+body.dark .pricing-hero,
+.dark .pricing-hero,
+[data-theme="dark"] .pricing-hero,
+body.dark .pricing-benefits,
+.dark .pricing-benefits,
+[data-theme="dark"] .pricing-benefits,
+body.dark .pricing-support,
+.dark .pricing-support,
+[data-theme="dark"] .pricing-support {
+    background: #0E292D;
+}
+
+body.dark .therapy-pricing-card,
+.dark .therapy-pricing-card,
+[data-theme="dark"] .therapy-pricing-card,
+body.dark .pricing-package-card,
+.dark .pricing-package-card,
+[data-theme="dark"] .pricing-package-card,
+body.dark .pricing-benefit-card,
+.dark .pricing-benefit-card,
+[data-theme="dark"] .pricing-benefit-card,
+body.dark .pricing-support-content,
+.dark .pricing-support-content,
+[data-theme="dark"] .pricing-support-content {
+    background: #102F33;
+    border-color: #285052;
+    box-shadow: none;
+}
+
+body.dark .pricing-section-heading h2,
+.dark .pricing-section-heading h2,
+[data-theme="dark"] .pricing-section-heading h2,
+body.dark .therapy-pricing-label,
+.dark .therapy-pricing-label,
+[data-theme="dark"] .therapy-pricing-label,
+body.dark .pricing-benefit-card h3,
+.dark .pricing-benefit-card h3,
+[data-theme="dark"] .pricing-benefit-card h3,
+body.dark .pricing-support-text h3,
+.dark .pricing-support-text h3,
+[data-theme="dark"] .pricing-support-text h3,
+body.dark .pricing-faq-item summary,
+.dark .pricing-faq-item summary,
+[data-theme="dark"] .pricing-faq-item summary {
+    color: #EAF7F4;
+}
+
+body.dark .pricing-section-heading p,
+.dark .pricing-section-heading p,
+[data-theme="dark"] .pricing-section-heading p,
+body.dark .therapy-pricing-card > p,
+.dark .therapy-pricing-card > p,
+[data-theme="dark"] .therapy-pricing-card > p,
+body.dark .therapy-pricing-features li,
+.dark .therapy-pricing-features li,
+[data-theme="dark"] .therapy-pricing-features li,
+body.dark .pricing-package-note,
+.dark .pricing-package-note,
+[data-theme="dark"] .pricing-package-note,
+body.dark .pricing-benefit-card p,
+.dark .pricing-benefit-card p,
+[data-theme="dark"] .pricing-benefit-card p,
+body.dark .pricing-support-text p,
+.dark .pricing-support-text p,
+[data-theme="dark"] .pricing-support-text p {
+    color: #B7D0CD;
+}
+
+body.dark .therapy-price span,
+.dark .therapy-price span,
+[data-theme="dark"] .therapy-price span {
+    color: #B7D0CD;
+}
+
+body.dark .pricing-faq-item,
+.dark .pricing-faq-item,
+[data-theme="dark"] .pricing-faq-item {
+    background: #102F33;
+    border-color: #285052;
+}
+
+body.dark .pricing-faq-answer,
+.dark .pricing-faq-answer,
+[data-theme="dark"] .pricing-faq-answer {
+    color: #B7D0CD;
+}
+
+body.dark .therapy-pricing-btn:not(.featured *),
+.dark .therapy-pricing-btn:not(.featured *),
+[data-theme="dark"] .therapy-pricing-btn:not(.featured *) {
+    color: #63D0C1;
+    background: transparent;
+    border-color: #159C8D;
+}
+
+body.dark .therapy-pricing-btn:not(.featured *) :hover,
+.dark .therapy-pricing-btn:not(.featured *) :hover,
+[data-theme="dark"] .therapy-pricing-btn:not(.featured *) :hover {
+    color: #FFFFFF;
+    background: #128F82;
+}
+
+
+body.rtl .therapy-pricing-features li,
+.rtl .therapy-pricing-features li,
+[dir="rtl"] .therapy-pricing-features li {
+    padding-right: 27px;
+    padding-left: 0;
+}
+
+body.rtl .therapy-pricing-features li::before,
+.rtl .therapy-pricing-features li::before,
+[dir="rtl"] .therapy-pricing-features li::before {
+    right: 0;
+    left: auto;
+}
+
+body.rtl .pricing-assessment-list,
+.rtl .pricing-assessment-list,
+[dir="rtl"] .pricing-assessment-list {
+    padding-right: 22px;
+    padding-left: 0;
+}
+
+body.rtl .pricing-support-content,
+.rtl .pricing-support-content,
+[dir="rtl"] .pricing-support-content {
+    text-align: right;
+}
+
+
+@media (max-width: 1024px) {
+    .pricing-page .section-spacing,
+    .therapy-pricing,
+    .pricing-assessment,
+    .pricing-packages,
+    .pricing-benefits,
+    .pricing-faq {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .therapy-pricing-grid {
+        gap: 18px;
+    }
+
+    .therapy-pricing-card {
+        padding: 28px 21px;
+    }
+
+    .therapy-pricing-label {
+        font-size: 19px;
+    }
+
+    .therapy-price {
+        font-size: 30px;
+    }
+
+    .pricing-packages-grid,
+    .pricing-benefits-grid {
+        gap: 18px;
+    }
+
+    .pricing-package-card,
+    .pricing-benefit-card {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .pricing-container {
+        width: min(100% - 32px, 540px);
+    }
+
+    .pricing-page .section-spacing,
+    .therapy-pricing,
+    .pricing-assessment,
+    .pricing-packages,
+    .pricing-benefits,
+    .pricing-faq {
+        padding-top: 52px;
+        padding-bottom: 52px;
+    }
+
+    .pricing-section-heading {
+        margin-bottom: 32px;
+    }
+
+    .pricing-section-heading h2 {
+        font-size: 29px;
+    }
+
+    .pricing-section-heading p {
+        font-size: 14px;
+    }
+
+    .therapy-pricing-grid,
+    .pricing-packages-grid,
+    .pricing-benefits-grid,
+    .pricing-assessment-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .therapy-pricing-card {
+        padding: 28px 24px;
+    }
+
+    .therapy-pricing-card.featured {
+        transform: none;
+    }
+
+    .therapy-pricing-label {
+        font-size: 21px;
+    }
+
+    .therapy-price {
+        font-size: 32px;
+    }
+
+    .pricing-assessment-grid {
+        gap: 28px;
+    }
+
+    .pricing-assessment-image {
+        min-height: 230px;
+        max-height: 330px;
+    }
+
+    .pricing-support-content {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 22px;
+    }
+
+    .pricing-support-text {
+        flex-basis: calc(100% - 75px);
+    }
+
+    .pricing-support-btn {
+        width: 100%;
+    }
+
+    .pricing-hero,
+    .pricing-cta {
+        padding: 55px 0;
+    }
+
+    .pricing-cta-actions,
+    .pricing-hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .pricing-cta-actions a,
+    .pricing-hero-actions a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .pricing-container {
+        width: calc(100% - 26px);
+    }
+
+    .therapy-pricing-card {
+        padding: 24px 19px;
+        border-radius: 14px;
+    }
+
+    .therapy-pricing-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+
+    .therapy-pricing-label {
+        font-size: 19px;
+    }
+
+    .therapy-price {
+        font-size: 29px;
+    }
+
+    .therapy-pricing-features {
+        gap: 12px;
+    }
+
+    .pricing-section-heading h2 {
+        font-size: 26px;
+    }
+
+    .pricing-faq-item {
+        padding: 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .therapy-pricing-card,
+    .therapy-pricing-btn {
+        transition: none;
+    }
+
+    .therapy-pricing-card:hover {
+        transform: none;
+    }
+}
+.therapy-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 26px;
+    overflow: visible;
+}
+
+.therapy-pricing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.therapy-pricing-card.featured {
+    position: relative;
+    z-index: 5;
+    height: 100%;
+    margin-top: 0;
+   
+    border: 2px solid #159C8D;
+    overflow: visible;
+}
+
+
+
+.therapy-pricing-features {
+    flex-grow: 1;
+}
+
+.therapy-pricing-btn {
+    margin-top: auto;
+}
+
+
+
+.therapy-pricing-card.featured .therapy-pricing-badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    z-index: 10;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    max-width: calc(100% - 24px);
+    margin: 0;
+    padding: 8px 20px;
+    color: #FFFFFF;
+    background: #159C8D;
+    border: 2px solid #159C8D;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+
+
+@media (max-width: 1024px) {
+    .therapy-pricing-grid {
+        gap: 18px;
+    }
+}
+
+
+
+@media (max-width: 767px) {
+    .therapy-pricing-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 26px;
+    }
+
+    .therapy-pricing-card,
+    .therapy-pricing-card.featured {
+        height: auto;
+        min-height: 0;
+        transform: none;
+    }
+
+    .therapy-pricing-card.featured {
+        margin-top: 14px;
+    }
+}
+.pricing-intro {
+    position: relative;
+    padding: 85px 0;
+    background: #F8FCFB;
+    overflow: hidden;
+}
+
+.pricing-intro .pricing-container {
+    width: min(1160px, 92%);
+    margin: 0 auto;
+}
+
+
+
+.pricing-intro .pricing-section-heading {
+    max-width: 730px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.pricing-intro .pricing-eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #128F82;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.pricing-intro .pricing-section-heading h2 {
+    margin: 0 0 18px;
+    color: #173B3A;
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(30px, 4vw, 43px);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.pricing-intro .pricing-section-heading h2 span {
+    display: inline;
+    color: #159C8D;
+}
+
+.pricing-intro .pricing-section-heading p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #607776;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+
+.pricing-intro-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+}
+
+.pricing-intro-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 30px 27px;
+    background: #FFFFFF;
+    border: 1px solid #DCECE8;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(23, 59, 58, 0.045);
+    transition: transform 0.3s ease, border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.pricing-intro-card:hover {
+    transform: translateY(-5px);
+    border-color: #159C8D;
+    box-shadow: 0 14px 30px rgba(21, 156, 141, 0.10);
+}
+
+
+
+.pricing-intro-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 21px;
+    flex-shrink: 0;
+    color: #128F82;
+    background: #E8F6F3;
+    border-radius: 15px;
+    font-size: 23px;
+}
+
+
+
+.pricing-intro-card h3 {
+    margin: 0 0 12px;
+    color: #173B3A;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.pricing-intro-card p {
+    margin: 0;
+    color: #607776;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+
+
+.pricing-intro-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 32px;
+    padding: 28px 32px;
+    background: #E8F6F3;
+    border: 1px solid #D5EBE6;
+    border-radius: 16px;
+}
+
+.pricing-intro-cta-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.pricing-intro-cta-content h3 {
+    margin: 0 0 8px;
+    color: #173B3A;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.pricing-intro-cta-content p {
+    margin: 0;
+    color: #607776;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.pricing-intro-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    flex-shrink: 0;
+    padding: 13px 22px;
+    color: #FFFFFF;
+    background: #159C8D;
+    border: 1px solid #159C8D;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.pricing-intro-btn:hover {
+    color: #FFFFFF;
+    background: #10796F;
+    border-color: #10796F;
+    transform: translateY(-2px);
+}
+
+.pricing-intro-btn i {
+    font-size: 12px;
+}
+
+
+body.dark .pricing-intro,
+.dark .pricing-intro,
+[data-theme="dark"] .pricing-intro {
+    background: #071A1D;
+}
+
+body.dark .pricing-intro-card,
+.dark .pricing-intro-card,
+[data-theme="dark"] .pricing-intro-card {
+    background: #102F33;
+    border-color: #285052;
+    box-shadow: none;
+}
+
+body.dark .pricing-intro .pricing-section-heading h2,
+.dark .pricing-intro .pricing-section-heading h2,
+[data-theme="dark"] .pricing-intro .pricing-section-heading h2,
+body.dark .pricing-intro-card h3,
+.dark .pricing-intro-card h3,
+[data-theme="dark"] .pricing-intro-card h3,
+body.dark .pricing-intro-cta-content h3,
+.dark .pricing-intro-cta-content h3,
+[data-theme="dark"] .pricing-intro-cta-content h3 {
+    color: #EAF7F4;
+}
+
+body.dark .pricing-intro .pricing-section-heading p,
+.dark .pricing-intro .pricing-section-heading p,
+[data-theme="dark"] .pricing-intro .pricing-section-heading p,
+body.dark .pricing-intro-card p,
+.dark .pricing-intro-card p,
+[data-theme="dark"] .pricing-intro-card p,
+body.dark .pricing-intro-cta-content p,
+.dark .pricing-intro-cta-content p,
+[data-theme="dark"] .pricing-intro-cta-content p {
+    color: #B7D0CD;
+}
+
+body.dark .pricing-intro-cta,
+.dark .pricing-intro-cta,
+[data-theme="dark"] .pricing-intro-cta {
+    background: #0E292D;
+    border-color: #285052;
+}
+
+body.rtl .pricing-intro-card,
+.rtl .pricing-intro-card,
+[dir="rtl"] .pricing-intro-card {
+    align-items: flex-start;
+    text-align: right;
+}
+
+body.rtl .pricing-intro-cta,
+.rtl .pricing-intro-cta,
+[dir="rtl"] .pricing-intro-cta {
+    text-align: right;
+}
+
+body.rtl .pricing-intro-btn i,
+.rtl .pricing-intro-btn i,
+[dir="rtl"] .pricing-intro-btn i {
+    transform: scaleX(-1);
+}
+
+@media (max-width: 1024px) {
+    .pricing-intro {
+        padding: 70px 0;
+    }
+
+    .pricing-intro-grid {
+        gap: 18px;
+    }
+
+    .pricing-intro-card {
+        padding: 25px 21px;
+    }
+
+    .pricing-intro-card h3 {
+        font-size: 18px;
+    }
+
+    .pricing-intro-cta {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .pricing-intro {
+        padding: 55px 0;
+    }
+
+    .pricing-intro .pricing-container {
+        width: calc(100% - 32px);
+    }
+
+    .pricing-intro .pricing-section-heading {
+        margin-bottom: 32px;
+    }
+
+    .pricing-intro .pricing-section-heading h2 {
+        font-size: 29px;
+    }
+
+    .pricing-intro .pricing-section-heading p {
+        font-size: 14px;
+    }
+
+    .pricing-intro-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .pricing-intro-card {
+        padding: 25px;
+    }
+
+    .pricing-intro-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        margin-top: 24px;
+        padding: 24px;
+    }
+
+    .pricing-intro-cta-content h3 {
+        font-size: 19px;
+    }
+
+    .pricing-intro-btn {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 420px) {
+    .pricing-intro .pricing-container {
+        width: calc(100% - 26px);
+    }
+
+    .pricing-intro .pricing-section-heading h2 {
+        font-size: 26px;
+    }
+
+    .pricing-intro-card {
+        padding: 22px;
+    }
+
+    .pricing-intro-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 21px;
+    }
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    .pricing-intro-card,
+    .pricing-intro-btn {
+        transition: none;
+    }
+
+    .pricing-intro-card:hover,
+    .pricing-intro-btn:hover {
+        transform: none;
+    }
+}
+
+.pricing-intro-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.pricing-intro-icon i,
+.pricing-intro-icon svg {
+    display: block;
+    margin: 0 auto;
+    line-height: 1;
+}
+
+
+.therapy-pricing-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.therapy-pricing-icon i,
+.therapy-pricing-icon svg {
+    display: block;
+    margin: 0 auto;
+    line-height: 1;
+}
+.therapy-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 26px;
+}
+
+.therapy-pricing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+.therapy-pricing-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.therapy-pricing-label,
+.therapy-pricing-card h3,
+.therapy-pricing-card h4 {
+    width: 100%;
+    text-align: center;
+}
+
+
+.therapy-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+}
+
+
+.therapy-pricing-features {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    list-style: none;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.therapy-pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.therapy-pricing-features li i,
+.therapy-pricing-features li .fa,
+.therapy-pricing-features li .fas {
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+
+.therapy-pricing-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: auto;
+    text-align: center;
+}
+
+
+.therapy-pricing-card.featured {
+    position: relative;
+}
+
+.therapy-pricing-card.featured .therapy-pricing-badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+@media (max-width: 1024px) {
+    .therapy-pricing-grid {
+        gap: 18px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .therapy-pricing-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .therapy-pricing-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .therapy-pricing-card.featured {
+        margin-top: 14px;
+    }
+}
+
+
+.pricing-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+.pricing-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pricing-animate,
+    .pricing-animate.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

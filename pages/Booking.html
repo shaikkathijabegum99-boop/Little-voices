@@ -1,0 +1,1204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book an Assessment | Little Voices Speech &amp; Language Therapy</title>
+
+    <meta
+        name="description"
+        content="Request a speech and language therapy assessment for your child at Little Voices. Tell us about your child's needs and preferred appointment."
+    >
+
+    <link
+        rel="icon"
+        href="/images/little-voices-logo1.png"
+        type="image/png"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="/css/fixes.css">
+  
+   
+
+    <style>
+        :root {
+            --booking-bg: #F8FCFB;
+            --booking-surface: #FFFFFF;
+            --booking-surface-light: #E8F6F3;
+            --booking-primary: #159C8D;
+            --booking-primary-dark: #128F82;
+            --booking-text: #173B3A;
+            --booking-muted: #607776;
+            --booking-border: #DCECE8;
+            --booking-input: #FFFFFF;
+            --booking-shadow: 0 24px 70px rgba(23, 59, 58, 0.16);
+            --booking-font-heading: "Lora", serif;
+            --booking-font-body: "Nunito Sans", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body.booking-page-body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(21, 156, 141, 0.09),
+                    transparent 35%
+                ),
+                var(--booking-bg);
+            color: var(--booking-text);
+            font-family: var(--booking-font-body);
+        }
+
+        .booking-page {
+            min-height: 100vh;
+            padding: 30px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .booking-modal {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .booking-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(23, 59, 58, 0.12);
+            pointer-events: none;
+        }
+
+        .booking-modal-box {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 760px;
+            max-height: none;
+            overflow: visible;
+            padding: 38px;
+            border: 1px solid var(--booking-border);
+            border-radius: 20px;
+            background: var(--booking-surface);
+            box-shadow: var(--booking-shadow);
+        }
+
+        .booking-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--booking-border);
+            border-radius: 10px;
+            background: var(--booking-surface-light);
+            color: var(--booking-text);
+            font-size: 18px;
+            text-decoration: none;
+            transition: 0.25s ease;
+        }
+
+        .booking-modal-close:hover {
+            background: var(--booking-primary);
+            border-color: var(--booking-primary);
+            color: #FFFFFF;
+        }
+
+        .booking-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0 50px 28px 0;
+            color: var(--booking-text);
+            text-decoration: none;
+        }
+
+        .booking-logo-mark {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: var(--booking-surface-light);
+            color: var(--booking-primary);
+            font-size: 22px;
+        }
+
+        .booking-logo-text {
+            font-family: var(--booking-font-heading);
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .booking-modal-header {
+            margin-bottom: 28px;
+        }
+
+        .booking-modal-header .eyebrow {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: var(--booking-primary);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .booking-modal-header h2 {
+            margin: 0 0 13px;
+            color: var(--booking-text);
+            font-family: var(--booking-font-heading);
+            font-size: clamp(28px, 4vw, 39px);
+            line-height: 1.3;
+        }
+
+        .booking-modal-header h2 span {
+            display: inline;
+            color: var(--booking-primary);
+        }
+
+        .booking-modal-header p {
+            max-width: 530px;
+            margin: 0;
+            color: var(--booking-muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .booking-popup-form {
+            width: 100%;
+        }
+
+        .booking-form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 0;
+            margin-bottom: 18px;
+        }
+
+        .booking-form-grid .form-group {
+            margin-bottom: 0;
+        }
+
+        .form-group label {
+            color: var(--booking-text);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            min-width: 0;
+            min-height: 48px;
+            padding: 12px 14px;
+            border: 1px solid var(--booking-border);
+            border-radius: 10px;
+            outline: none;
+            background: var(--booking-input);
+            color: var(--booking-text);
+            font-family: var(--booking-font-body);
+            font-size: 13px;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #849B99;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--booking-primary);
+            box-shadow: 0 0 0 3px rgba(21, 156, 141, 0.12);
+        }
+
+        .form-group select,
+        .form-group input[type="date"] {
+            cursor: pointer;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .booking-urgent {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            margin: 2px 0 22px;
+            padding: 14px;
+            border: 1px solid #F4D7D7;
+            border-radius: 10px;
+            background: #FFF7F6;
+            color: var(--booking-text);
+            font-size: 13px;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .booking-urgent input {
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+            margin: 2px 0 0;
+            accent-color: var(--booking-primary);
+        }
+
+        .booking-submit {
+            width: 100%;
+            min-height: 52px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 14px 22px;
+            border: 1px solid var(--booking-primary);
+            border-radius: 10px;
+            background: var(--booking-primary);
+            color: #FFFFFF;
+            font-family: var(--booking-font-body);
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.25s ease;
+        }
+
+        .booking-submit:hover {
+            background: var(--booking-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .booking-submit i {
+            transition: transform 0.25s ease;
+        }
+
+        .booking-submit:hover i {
+            transform: translateX(4px);
+        }
+
+        .booking-privacy {
+            margin: 16px 0 0;
+            color: var(--booking-muted);
+            font-size: 11px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .booking-page {
+                padding: 14px 10px;
+            }
+
+            .booking-modal-box {
+                padding: 25px 18px;
+                border-radius: 15px;
+            }
+
+            .booking-modal-close {
+                top: 14px;
+                right: 14px;
+                width: 36px;
+                height: 36px;
+            }
+
+            .booking-logo {
+                gap: 9px;
+                margin-bottom: 23px;
+            }
+
+            .booking-logo-mark {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            .booking-logo-text {
+                font-size: 16px;
+            }
+
+            .booking-modal-header h2 {
+                font-size: 29px;
+            }
+
+            .booking-form-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+                margin-bottom: 0;
+            }
+
+            .booking-form-grid .form-group {
+                margin-bottom: 16px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .booking-modal-box {
+                padding: 22px 14px;
+            }
+
+            .booking-modal-header h2 {
+                font-size: 25px;
+            }
+        }
+      
+/* =========================================
+   LITTLE VOICES — CENTERED BOOKING LOGO
+   ========================================= */
+
+.booking-modal-box > .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 28px;
+    padding: 0;
+    text-align: center;
+}
+
+.booking-modal-box > .logo > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+}
+
+.booking-modal-box > .logo .logo-img {
+    display: block;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    object-fit: contain;
+    object-position: center;
+    margin: 0;
+}
+
+.booking-modal-box > .logo .logo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+}
+
+.booking-modal-box > .logo .logo-text {
+    margin: 0;
+    color: #173B3A;
+    font-family: "Lora", serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.booking-modal-box > .logo .logo-text span {
+    color: #159C8D;
+}
+
+.booking-modal-box > .logo .logo-subtitle {
+    display: block;
+    margin-top: 3px;
+    color: #607776;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
+
+.booking-modal-box > .booking-modal-header {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 28px;
+}
+
+.booking-modal-box > .booking-modal-header h2 {
+    text-align: center;
+}
+
+.booking-modal-box > .booking-modal-header p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+@media (max-width: 600px) {
+    .booking-modal-box > .logo {
+        margin-bottom: 23px;
+    }
+
+    .booking-modal-box > .logo > a {
+        gap: 9px;
+    }
+
+    .booking-modal-box > .logo .logo-img {
+        width: 44px;
+        height: 44px;
+        flex-basis: 44px;
+    }
+
+    .booking-modal-box > .logo .logo-text {
+        font-size: 17px;
+    }
+
+    .booking-modal-box > .logo .logo-subtitle {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .booking-modal-box > .logo .logo-img {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+    }
+
+    .booking-modal-box > .logo .logo-text {
+        font-size: 15px;
+    }
+
+    .booking-modal-box > .logo .logo-subtitle {
+        font-size: 9px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    html,
+    body.booking-page-body {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .booking-page {
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .booking-modal {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        min-height: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .booking-modal-overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+    }
+
+    .booking-modal-box {
+        position: relative;
+        width: min(100%, 900px);
+        max-width: 900px;
+        height: auto;
+        max-height: 100%;
+        min-height: 0;
+        margin: 0 auto;
+        padding: 20px 32px 18px;
+        overflow: hidden;
+        border-radius: 16px;
+        box-sizing: border-box;
+    }
+
+    
+    .booking-modal-box > .logo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 12px;
+        padding: 0;
+    }
+
+    .booking-modal-box > .logo > a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        margin: 0 auto;
+        text-decoration: none;
+    }
+
+    .booking-modal-box > .logo .logo-img {
+        display: block;
+        width: 38px;
+        height: 38px;
+        flex: 0 0 38px;
+        object-fit: contain;
+    }
+
+    .booking-modal-box > .logo .logo-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        line-height: 1.2;
+    }
+
+    .booking-modal-box > .logo .logo-text {
+        margin: 0;
+        font-family: "Lora", serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+
+    .booking-modal-box > .logo .logo-subtitle {
+        display: block;
+        margin-top: 2px;
+        font-size: 9px;
+        line-height: 1.3;
+    }
+
+    
+    .booking-modal-box > .booking-modal-header {
+        width: 100%;
+        margin: 0 auto 14px;
+        text-align: center;
+    }
+
+    .booking-modal-header .eyebrow {
+        margin-bottom: 5px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .booking-modal-header h2 {
+        margin: 0 0 5px;
+        font-size: clamp(23px, 2vw, 29px);
+        line-height: 1.2;
+    }
+
+    .booking-modal-header p {
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    
+    .booking-modal-box .booking-popup-form {
+        width: 100%;
+        margin: 0;
+    }
+
+    .booking-form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        gap: 4px;
+        margin-bottom: 10px;
+    }
+
+    .booking-form-grid .form-group {
+        margin-bottom: 0;
+    }
+
+    .form-group label {
+        font-size: 11px;
+        line-height: 1.25;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        min-width: 0;
+        min-height: 35px;
+        height: 35px;
+        padding: 6px 10px;
+        border-radius: 7px;
+        font-size: 11px;
+    }
+
+    .form-group textarea {
+        width: 100%;
+        min-height: 42px;
+        height: 42px;
+        padding: 7px 10px;
+        border-radius: 7px;
+        font-size: 11px;
+        resize: none;
+    }
+
+    
+    #popupDetails {
+        min-height: 42px;
+        height: 42px;
+    }
+
+    .booking-urgent {
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 10px;
+        padding: 8px 10px;
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .booking-urgent input {
+        width: 14px;
+        height: 14px;
+        margin: 0;
+    }
+
+    .booking-submit {
+        width: 100%;
+        min-height: 38px;
+        height: 38px;
+        padding: 8px 16px;
+        border-radius: 7px;
+        font-size: 12px;
+    }
+
+    .booking-submit:hover {
+        transform: none;
+    }
+
+    .booking-privacy {
+        margin: 7px 0 0;
+        font-size: 9px;
+        line-height: 1.35;
+    }
+
+    .booking-modal-close {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+        border-radius: 7px;
+    }
+}
+
+/* =========================================
+   LAPTOPS WITH SHORTER HEIGHTS
+   ========================================= */
+
+@media screen and (min-width: 1025px) and (max-height: 800px) {
+
+    .booking-page {
+        padding: 8px 16px;
+    }
+
+    .booking-modal-box {
+        padding: 14px 28px 12px;
+    }
+
+    .booking-modal-box > .logo {
+        margin-bottom: 8px;
+    }
+
+    .booking-modal-header {
+        margin-bottom: 9px !important;
+    }
+
+    .booking-modal-header h2 {
+        font-size: 23px;
+    }
+
+    .booking-form-grid {
+        gap: 9px;
+        margin-bottom: 7px;
+    }
+
+    .form-group {
+        gap: 3px;
+    }
+
+    .form-group input,
+    .form-group select {
+        min-height: 31px;
+        height: 31px;
+        padding: 4px 8px;
+    }
+
+    .form-group textarea,
+    #popupDetails {
+        min-height: 34px;
+        height: 34px;
+    }
+
+    .booking-urgent {
+        margin-bottom: 7px;
+        padding: 6px 9px;
+    }
+
+    .booking-submit {
+        min-height: 34px;
+        height: 34px;
+        padding: 6px 12px;
+    }
+
+    .booking-privacy {
+        margin-top: 5px;
+        font-size: 8px;
+    }
+}
+
+/* =========================================
+   VERY SHORT DESKTOP SCREENS
+   ========================================= */
+
+@media screen and (min-width: 1025px) and (max-height: 650px) {
+
+    .booking-modal-box {
+        padding: 8px 24px;
+    }
+
+    .booking-modal-box > .logo {
+        margin-bottom: 5px;
+    }
+
+    .booking-modal-box > .logo .logo-img {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+    }
+
+    .booking-modal-header {
+        margin-bottom: 6px !important;
+    }
+
+    .booking-modal-header .eyebrow {
+        margin-bottom: 3px;
+    }
+
+    .booking-modal-header h2 {
+        margin-bottom: 3px;
+        font-size: 20px;
+    }
+
+    .booking-modal-header p {
+        font-size: 10px;
+    }
+
+    .booking-form-grid {
+        gap: 6px;
+        margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select {
+        min-height: 28px;
+        height: 28px;
+        padding: 3px 7px;
+    }
+
+    .form-group textarea,
+    #popupDetails {
+        min-height: 30px;
+        height: 30px;
+    }
+
+    .booking-urgent {
+        margin-bottom: 5px;
+        padding: 5px 8px;
+    }
+
+    .booking-submit {
+        min-height: 30px;
+        height: 30px;
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+
+    .booking-privacy {
+        margin-top: 3px;
+        font-size: 8px;
+    }
+}
+
+
+    </style>
+</head>
+
+<body class="booking-page-body">
+
+    <main class="booking-page">
+
+        <div
+            class="booking-modal active"
+            id="bookingModal"
+            aria-hidden="false"
+        >
+
+            <div
+                class="booking-modal-overlay"
+                id="bookingOverlay"
+            ></div>
+
+            <div
+                class="booking-modal-box"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="bookingModalTitle"
+            >
+
+                <a
+                    aria-label="Back to home"
+                    class="booking-modal-close"
+                    href="/index.html"
+                    id="closeBooking"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+
+        
+<div class="logo">
+    <a href="/index.html" aria-label="Little Voices Home">
+        <img
+            src="/images/little-voices-logo1.png"
+            alt="Little Voices Speech and Language Therapy"
+            class="logo-img"
+            width="48"
+            height="48"
+        >
+
+        <div class="logo-content">
+            <div class="logo-text">
+                LITTLE <span>VOICES</span>
+            </div>
+
+            <small class="logo-subtitle">
+                Speech &amp; Language Therapy
+            </small>
+        </div>
+    </a>
+</div>
+                <div class="booking-modal-header">
+
+                    <span class="eyebrow">
+                        BOOK AN ASSESSMENT
+                    </span>
+
+                    <h2 id="bookingModalTitle">
+                        Let's Help Your Child
+                        <span>Find Their Voice.</span>
+                    </h2>
+
+                    <p>
+                        Tell us a little about your child and your
+                        preferred appointment. Our team can follow
+                        up to discuss your enquiry and next steps.
+                    </p>
+
+                </div>
+
+                <form
+                    class="booking-popup-form"
+                    id="bookingPopupForm"
+                    name="little-voices-booking"
+                    method="POST"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                >
+
+                    <input
+                        type="hidden"
+                        name="form-name"
+                        value="little-voices-booking"
+                    >
+
+                    <p hidden>
+                        <label>
+                            Leave this field empty:
+                            <input name="bot-field">
+                        </label>
+                    </p>
+
+                    <div class="booking-form-grid">
+
+                        <div class="form-group">
+                            <label for="popupName">
+                                Parent / Guardian Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="popupName"
+                                name="parent_name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                maxlength="100"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="popupPhone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="popupPhone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                                autocomplete="tel"
+                                inputmode="tel"
+                                pattern="[0-9+\s().-]{7,20}"
+                                maxlength="20"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="booking-form-grid">
+
+                        <div class="form-group">
+                            <label for="popupEmail">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="popupEmail"
+                                name="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                maxlength="150"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="popupChildName">
+                                Child's First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="popupChildName"
+                                name="child_name"
+                                placeholder="Enter child's first name"
+                                maxlength="80"
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="booking-form-grid">
+
+                        <div class="form-group">
+                            <label for="popupAge">
+                                Child's Age
+                            </label>
+
+                            <select
+                                id="popupAge"
+                                name="child_age"
+                                required
+                            >
+                                <option value="">Select age range</option>
+                                <option value="Under 2">Under 2 years</option>
+                                <option value="2-3">2–3 years</option>
+                                <option value="4-6">4–6 years</option>
+                                <option value="7-12">7–12 years</option>
+                                <option value="13+">13 years and above</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="popupService">
+                                Service Needed
+                            </label>
+
+                            <select
+                                id="popupService"
+                                name="service"
+                                required
+                            >
+                                <option value="">Select a service</option>
+                                <option value="Speech Assessment">Speech Assessment</option>
+                                <option value="Speech Delay">Speech Delay Support</option>
+                                <option value="Language Development">Language Development</option>
+                                <option value="Articulation Therapy">Articulation Therapy</option>
+                                <option value="Fluency">Fluency &amp; Stuttering</option>
+                                <option value="Social Communication">Social Communication</option>
+                                <option value="Parent Consultation">Parent Consultation</option>
+                                <option value="General Enquiry">General Enquiry</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="booking-form-grid">
+
+                        <div class="form-group">
+                            <label for="popupDate">
+                                Preferred Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="popupDate"
+                                name="preferred_date"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="popupTime">
+                                Preferred Time
+                            </label>
+
+                            <select
+                                id="popupTime"
+                                name="preferred_time"
+                                required
+                            >
+                                <option value="">Select preferred time</option>
+                                <option value="Morning">Morning</option>
+                                <option value="Afternoon">Afternoon</option>
+                                <option value="Evening">Evening</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="popupDetails">
+                            How Can We Help Your Child?
+                        </label>
+
+                        <textarea
+                            id="popupDetails"
+                            name="message"
+                            rows="3"
+                            maxlength="1500"
+                            placeholder="Share your concerns or any questions you have..."
+                        ></textarea>
+                    </div>
+
+                    <label class="booking-urgent">
+                        <input
+                            type="checkbox"
+                            name="parent_consultation"
+                            value="Requested"
+                        >
+
+                        <span>
+                            I would also like a parent consultation.
+                        </span>
+                    </label>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary booking-submit"
+                    >
+                        Request an Assessment
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <p
+                        class="booking-privacy"
+                        id="bookingFeedback"
+                        role="status"
+                        aria-live="polite"
+                    >
+                        Your information will be used to respond to your enquiry.
+                        Please avoid including sensitive medical details in this form.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dateInput = document.getElementById("popupDate");
+
+            if (dateInput) {
+                const today = new Date();
+                const localDate = [
+                    today.getFullYear(),
+                    String(today.getMonth() + 1).padStart(2, "0"),
+                    String(today.getDate()).padStart(2, "0")
+                ].join("-");
+
+                dateInput.min = localDate;
+            }
+        });
+    </script>
+
+</body>
+</html>

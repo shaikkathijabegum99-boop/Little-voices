@@ -1,0 +1,1413 @@
+
+.home1 {
+    width: 100%;
+    overflow: hidden;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.home1 * {
+    box-sizing: border-box;
+}
+
+.home1 img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.home1 a {
+    text-decoration: none;
+}
+
+.home1 section {
+    position: relative;
+    padding: 90px 0;
+}
+
+.home1 .container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.home1 h1,
+.home1 h2,
+.home1 h3,
+.home1 p {
+    margin-top: 0;
+}
+
+.home1 h1,
+.home1 h2,
+.home1 h3 {
+    color: var(--text-primary);
+}
+
+.home1 p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.home1 .accent {
+    color: var(--primary-color);
+}
+
+.home1 .section-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.home1 .section-heading {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.home1 .section-heading h2 {
+    margin-bottom: 17px;
+    font-size: clamp(28px, 3.5vw, 43px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.home1 .section-heading > p {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+
+.home1 .hero-actions,
+.home1 .assessment-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.home1 .primary-cta,
+.home1 .secondary-cta {
+    display: inline-flex;
+    min-height: 38px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.home1 .primary-cta {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    box-shadow: 0 7px 20px rgba(21, 156, 141, 0.15);
+}
+
+.home1 .primary-cta:hover {
+    background: var(--primary-light);
+    color: #FFFFFF;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(21, 156, 141, 0.22);
+}
+
+.home1 .secondary-cta {
+    border-color: var(--primary-color);
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.home1 .secondary-cta:hover {
+    border-color: var(--primary-color);
+    background: var(--bg-secondary);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.home1 .primary-cta i,
+.home1 .secondary-cta i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.home1 .primary-cta:hover i,
+.home1 .secondary-cta:hover i {
+    transform: translateX(4px);
+}
+
+
+
+.home1 .hero-section {
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+    padding-top: 100px;
+    padding-bottom: 90px;
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(67, 185, 170, 0.12),
+            transparent 30%
+        ),
+        var(--bg-primary);
+}
+
+.home1 .hero-container {
+    display: grid;
+    grid-template-columns: 1.02fr 0.98fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.home1 .hero-content {
+    position: relative;
+    z-index: 2;
+    animation: home1FadeUp 0.8s ease both;
+}
+
+.home1 .hero-content h1 {
+    max-width: 650px;
+    margin-bottom: 23px;
+    font-size: clamp(39px, 5vw, 66px);
+    font-weight: 800;
+    letter-spacing: -2.5px;
+    line-height: 1.12;
+}
+
+.home1 .hero-content > p {
+    max-width: 550px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.home1 .hero-image {
+    position: relative;
+    min-width: 0;
+    animation: home1ImageReveal 0.9s ease 0.15s both;
+}
+
+.home1 .hero-image > img {
+    height: 490px;
+    border: 8px solid var(--card-bg);
+    border-radius: 190px 190px 35px 35px;
+    box-shadow: var(--shadow-premium);
+}
+
+.home1 .hero-decoration {
+    position: absolute;
+    right: -22px;
+    bottom: 35px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 260px;
+    padding: 17px 21px;
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-premium);
+    font-size: 12px;
+    font-weight: 800;
+    animation: home1Float 5s ease-in-out infinite;
+}
+
+.home1 .hero-decoration i {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    color: var(--primary-color);
+    font-size: 19px;
+}
+
+.home1 .hero-note {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 24px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.home1 .hero-note i {
+    color: var(--secondary-color);
+    font-size: 15px;
+}
+
+
+
+.home1 .communication-section {
+    background: var(--bg-secondary);
+}
+
+.home1 .communication-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.home1 .communication-card {
+    min-width: 0;
+    padding: 30px 23px;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    background: var(--card-bg);
+    box-shadow: var(--shadow-premium);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.home1 .communication-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-hover);
+}
+
+.home1 .communication-icon {
+    display: grid;
+    width: 57px;
+    height: 57px;
+    margin-bottom: 23px;
+    place-items: center;
+    border-radius: 17px;
+    background: var(--bg-secondary);
+    color: var(--primary-color);
+    font-size: 23px;
+    transition:
+        transform 0.35s ease,
+        background-color 0.35s ease,
+        color 0.35s ease;
+}
+
+.home1 .communication-card:hover .communication-icon {
+    transform: rotate(-5deg) scale(1.06);
+    background: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.home1 .communication-card h3 {
+    margin-bottom: 12px;
+    font-size: 17px;
+    line-height: 1.45;
+}
+
+.home1 .communication-card p {
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+
+.home1 .milestones-section {
+    background: var(--bg-primary);
+}
+
+.home1 .milestones-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    position: relative;
+}
+
+.home1 .milestones-timeline::before {
+    content: "";
+    position: absolute;
+    top: 37px;
+    right: 12%;
+    left: 12%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        var(--primary-light),
+        var(--secondary-color),
+        var(--accent-color)
+    );
+    opacity: 0.6;
+}
+
+.home1 .milestone-card {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    padding: 28px 22px;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    background: var(--card-bg);
+    box-shadow: var(--shadow-premium);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.home1 .milestone-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.home1 .milestone-age {
+    display: block;
+    margin-bottom: 23px;
+    color: var(--primary-color);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.home1 .milestone-icon {
+  
+    width: 55px;
+    height: 55px;
+    margin-bottom: 22px;
+    place-items: center;
+    border: 5px solid var(--card-bg);
+    border-radius: 50%;
+    outline: 1px solid var(--card-border);
+    background: var(--bg-secondary);
+    color: var(--primary-color);
+    font-size: 19px;
+}
+
+.home1 .milestone-card h3 {
+    margin-bottom: 12px;
+    font-size: 17px;
+    line-height: 1.45;
+}
+
+.home1 .milestone-card p {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.home1 .milestone-disclaimer {
+    max-width: 900px;
+    margin: 28px auto 0;
+    padding: 15px 20px;
+    border-left: 3px solid var(--primary-color);
+    border-radius: 0 10px 10px 0;
+    background: var(--bg-secondary);
+    font-size: 12px;
+}
+
+
+
+.home1 .support-section {
+    background: var(--bg-secondary);
+}
+
+.home1 .support-container {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.home1 .support-content h2,
+.home1 .approach-content h2,
+.home1 .welcome-content h2 {
+    margin-bottom: 20px;
+    font-size: clamp(29px, 3.4vw, 43px);
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+}
+
+.home1 .support-content > p,
+.home1 .approach-content > p,
+.home1 .welcome-content > p {
+    margin-bottom: 28px;
+    font-size: 14px;
+}
+
+.home1 .support-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.home1 .support-card {
+    min-width: 0;
+    padding: 25px 22px;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    background: var(--card-bg);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.home1 .support-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.home1 .support-card > i {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 17px;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--bg-secondary);
+    color: var(--primary-color);
+    font-size: 19px;
+}
+
+.home1 .support-card h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.home1 .support-card p {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+
+
+.home1 .approach-section {
+    background: var(--bg-primary);
+}
+
+.home1 .approach-container {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.home1 .approach-image {
+    position: relative;
+    min-width: 0;
+}
+
+.home1 .approach-image::before {
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    width: 43%;
+    height: 43%;
+    border-top: 4px solid var(--primary-light);
+    border-left: 4px solid var(--primary-light);
+    border-radius: 20px 0 0;
+    pointer-events: none;
+}
+
+.home1 .approach-image img {
+    position: relative;
+    height: 550px;
+    border-radius: 25px;
+    box-shadow: var(--shadow-premium);
+}
+
+.home1 .approach-content > p {
+    margin-bottom: 27px;
+}
+
+.home1 .approach-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    margin-bottom: 23px;
+}
+
+.home1 .step-number {
+    display: grid;
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    place-items: center;
+    border: 1px solid var(--card-border);
+    border-radius: 13px;
+    background: var(--bg-secondary);
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 800;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.home1 .approach-step:hover .step-number {
+    background: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.home1 .approach-step h3 {
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.home1 .approach-step p {
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+
+.home1 .everyday-section {
+    background: var(--bg-secondary);
+}
+
+.home1 .everyday-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.home1 .everyday-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    background: var(--card-bg);
+    box-shadow: var(--shadow-premium);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.home1 .everyday-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow-hover);
+}
+
+.home1 .everyday-card > img {
+    height: 245px;
+    transition: transform 0.6s ease;
+}
+
+.home1 .everyday-card:hover > img {
+    transform: scale(1.045);
+}
+
+.home1 .everyday-card-content {
+    position: relative;
+    padding: 26px 25px 28px;
+}
+
+.home1 .activity-number {
+    display: inline-block;
+    margin-bottom: 13px;
+    color: var(--primary-color);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.home1 .everyday-card h3 {
+    margin-bottom: 11px;
+    font-size: 19px;
+}
+
+.home1 .everyday-card p {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.home1 .welcome-section {
+    background: var(--bg-primary);
+}
+
+.home1 .welcome-container {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.home1 .welcome-content {
+    min-width: 0;
+}
+
+.home1 .welcome-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 0 30px;
+    padding: 0;
+    list-style: none;
+}
+
+.home1 .welcome-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text-primary);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.home1 .welcome-list i {
+    flex-shrink: 0;
+    margin-top: 4px;
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+.home1 .welcome-image {
+    position: relative;
+    min-width: 0;
+}
+
+.home1 .welcome-image img {
+    height: 470px;
+    border-radius: 25px 100px 25px 25px;
+    box-shadow: var(--shadow-premium);
+}
+
+.home1 .welcome-image::after {
+    content: "";
+    position: absolute;
+    right: -13px;
+    bottom: -13px;
+    z-index: -1;
+    width: 48%;
+    height: 48%;
+    border-radius: 20px;
+    background: var(--bg-secondary);
+}
+
+
+
+.home1 .assessment-cta {
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 5% 10%,
+            rgba(67, 185, 170, 0.15),
+            transparent 30%
+        ),
+        var(--bg-secondary);
+
+}
+
+.home1 .assessment-cta-content {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 55px 30px;
+    text-align: center;
+}
+
+.home1 .assessment-icon {
+    display: grid;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 23px;
+    place-items: center;
+    border: 1px solid var(--card-border);
+    border-radius: 22px;
+    background: var(--card-bg);
+    color: var(--primary-color);
+    font-size: 28px;
+    box-shadow: var(--shadow-premium);
+    animation: home1Float 4s ease-in-out infinite;
+}
+
+.home1 .assessment-cta-content h2 {
+    margin-bottom: 18px;
+    font-size: clamp(30px, 4vw, 47px);
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+}
+
+.home1 .assessment-cta-content > p {
+    max-width: 690px;
+    margin: 0 auto 28px;
+    font-size: 14px;
+}
+
+.home1 .assessment-actions {
+    justify-content: center;
+}
+
+.home1 .assessment-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 25px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.home1 .assessment-note i {
+    color: var(--secondary-color);
+}
+
+
+
+@keyframes home1FadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes home1ImageReveal {
+    from {
+        opacity: 0;
+        transform: translateX(25px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes home1Float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+.home1 .section-reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity 0.75s ease,
+        transform 0.75s ease;
+}
+
+.home1 .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+body.dark-mode .home1 .communication-section,
+body.dark-mode .home1 .support-section,
+body.dark-mode .home1 .everyday-section,
+body.dark-mode .home1 .assessment-cta {
+    background-color: var(--bg-secondary);
+}
+
+body.dark-mode .home1 .hero-section {
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(67, 185, 170, 0.10),
+            transparent 30%
+        ),
+        var(--bg-primary);
+}
+
+body.dark-mode .home1 .communication-card,
+body.dark-mode .home1 .milestone-card,
+body.dark-mode .home1 .support-card,
+body.dark-mode .home1 .everyday-card,
+body.dark-mode .home1 .assessment-icon {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+body.dark-mode .home1 .secondary-cta {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text-primary);
+}
+
+body.dark-mode .home1 .secondary-cta:hover {
+    background: var(--bg-secondary);
+    border-color: var(--primary-color);
+    color: var(--primary-light);
+}
+
+body.dark-mode .home1 .communication-icon,
+body.dark-mode .home1 .milestone-icon,
+body.dark-mode .home1 .support-card > i,
+body.dark-mode .home1 .step-number {
+    background: var(--bg-secondary);
+    color: var(--primary-light);
+}
+
+body.dark-mode .home1 .communication-card:hover .communication-icon,
+body.dark-mode .home1 .approach-step:hover .step-number {
+    background: var(--primary-color);
+    color: #FFFFFF;
+}
+
+body.dark-mode .home1 .milestone-disclaimer {
+    background: var(--bg-secondary);
+}
+
+body.dark-mode .home1 .milestones-timeline::before {
+    opacity: 0.8;
+}
+
+
+
+@media (max-width: 1024px) {
+    .home1 section {
+        padding: 75px 0;
+    }
+
+    .home1 .container {
+        padding: 0 28px;
+    }
+
+    .home1 .hero-section {
+        min-height: auto;
+        padding-top: 135px;
+    }
+
+    .home1 .hero-container {
+        grid-template-columns: 1fr 0.9fr;
+        gap: 35px;
+    }
+
+    .home1 .hero-content h1 {
+        font-size: clamp(36px, 5vw, 50px);
+        letter-spacing: -1.5px;
+    }
+
+    .home1 .hero-image > img {
+        height: 410px;
+    }
+
+    .home1 .hero-decoration {
+        right: -8px;
+        bottom: 20px;
+        padding: 12px;
+    }
+
+    .home1 .communication-grid,
+    .home1 .milestones-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home1 .milestones-timeline::before {
+        display: none;
+    }
+
+    .home1 .support-container,
+    .home1 .approach-container,
+    .home1 .welcome-container {
+        gap: 35px;
+    }
+
+    .home1 .approach-image img {
+        height: 490px;
+    }
+
+    .home1 .welcome-image img {
+        height: 410px;
+    }
+
+    .home1 .everyday-card > img {
+        height: 200px;
+    }
+}
+
+
+
+@media (max-width: 640px) {
+    .home1 section {
+        padding: 58px 0;
+    }
+
+    .home1 .container {
+        padding: 0 18px;
+    }
+
+    .home1 .section-label {
+        margin-bottom: 11px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .home1 .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .home1 .section-heading h2 {
+        font-size: 29px;
+        letter-spacing: -0.7px;
+    }
+
+    .home1 .section-heading > p {
+        font-size: 13px;
+    }
+
+    .home1 .hero-section {
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: 55px;
+    }
+
+    .home1 .hero-container {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .home1 .hero-content h1 {
+        max-width: 500px;
+        font-size: clamp(36px, 10vw, 48px);
+        letter-spacing: -1.5px;
+    }
+
+    .home1 .hero-content > p {
+        font-size: 14px;
+    }
+
+    .home1 .hero-actions {
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .home1 .primary-cta,
+    .home1 .secondary-cta {
+        min-height: 46px;
+        padding: 12px 17px;
+        font-size: 11px;
+    }
+
+    .home1 .hero-image {
+        width: 100%;
+        max-width: 470px;
+        margin: 0 auto;
+    }
+
+    .home1 .hero-image > img {
+        height: 360px;
+        border-width: 5px;
+        border-radius: 145px 145px 25px 25px;
+    }
+
+    .home1 .hero-decoration {
+        right: 5px;
+        bottom: 17px;
+        max-width: 230px;
+        gap: 9px;
+        padding: 10px 13px;
+        font-size: 11px;
+    }
+
+    .home1 .hero-decoration i {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+
+    .home1 .hero-note {
+        align-items: flex-start;
+        font-size: 11px;
+    }
+
+    .home1 .communication-grid,
+    .home1 .milestones-timeline,
+    .home1 .support-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .home1 .communication-card {
+        padding: 24px 21px;
+    }
+
+    .home1 .communication-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 16px;
+        font-size: 20px;
+    }
+
+    .home1 .communication-card h3,
+    .home1 .milestone-card h3 {
+        font-size: 16px;
+    }
+
+    .home1 .milestone-card {
+        padding: 23px 20px;
+    }
+
+    .home1 .milestone-age {
+        margin-bottom: 15px;
+    }
+
+    .home1 .milestone-icon {
+        margin-bottom: 15px;
+    }
+
+    .home1 .milestone-disclaimer {
+        padding: 13px 15px;
+        font-size: 11px;
+    }
+
+    .home1 .support-container,
+    .home1 .approach-container,
+    .home1 .welcome-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .home1 .support-content h2,
+    .home1 .approach-content h2,
+    .home1 .welcome-content h2 {
+        font-size: 30px;
+        letter-spacing: -0.7px;
+    }
+
+    .home1 .support-card {
+        padding: 20px 17px;
+    }
+
+    .home1 .support-card > i {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+
+    .home1 .approach-image img {
+        height: 350px;
+        border-radius: 20px;
+    }
+
+    .home1 .approach-image::before {
+        top: -9px;
+        left: -9px;
+    }
+
+    .home1 .approach-step {
+        gap: 13px;
+        margin-bottom: 20px;
+    }
+
+    .home1 .step-number {
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+    }
+
+    .home1 .everyday-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .home1 .everyday-card > img {
+        height: 235px;
+    }
+
+    .home1 .everyday-card-content {
+        padding: 22px;
+    }
+
+    .home1 .welcome-image img {
+        height: 340px;
+        border-radius: 20px 65px 20px 20px;
+    }
+
+    .home1 .assessment-cta-content {
+        padding: 35px 0;
+    }
+
+    .home1 .assessment-cta-content h2 {
+        font-size: 30px;
+        letter-spacing: -0.7px;
+    }
+
+    .home1 .assessment-cta-content > p {
+        font-size: 13px;
+    }
+
+    .home1 .assessment-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .home1 .assessment-actions a {
+        width: 100%;
+    }
+
+    .home1 .assessment-note {
+        align-items: flex-start;
+        font-size: 11px;
+    }
+}
+
+
+
+@media (max-width: 380px) {
+    .home1 .container {
+        padding: 0 14px;
+    }
+
+    .home1 .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .home1 .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .home1 .hero-actions a {
+        width: 100%;
+    }
+
+    .home1 .hero-image > img {
+        height: 300px;
+    }
+
+    .home1 .hero-decoration {
+        right: 3px;
+        bottom: 12px;
+        max-width: 205px;
+    }
+
+    .home1 .communication-card,
+    .home1 .milestone-card {
+        padding: 20px 17px;
+    }
+
+    .home1 .support-content h2,
+    .home1 .approach-content h2,
+    .home1 .welcome-content h2,
+    .home1 .assessment-cta-content h2 {
+        font-size: 27px;
+    }
+
+    .home1 .everyday-card > img {
+        height: 205px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .home1 *,
+    .home1 *::before,
+    .home1 *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .home1 .section-reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.home1 .assessment-cta {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.home1 .assessment-cta-content {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+
+@media (max-width: 1024px) {
+    .home1 .assessment-cta {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+
+    .home1 .assessment-cta-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 640px) {
+    .home1 .assessment-cta {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .home1 .assessment-cta-content {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+
+.communication-card .communication-icon {
+    width: 100%;
+    height: 200px;
+    margin: 0 0 24px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--card-bg, #14383D);
+}
+
+.communication-card .communication-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.communication-card:hover .communication-icon img {
+    transform: scale(1.05);
+}
+
+.communication-card {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .communication-card .communication-icon {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .communication-card .communication-icon {
+        height: 200px;
+    }
+}
+
+
+
+.milestone-card .milestone-icon {
+    width: 100%;
+    height: 190px;
+    margin: 18px 0 22px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--card-bg, #14383D);
+}
+
+.milestone-card .milestone-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+    transition: transform 0.4s ease;
+}
+
+.milestone-card:hover .milestone-icon img {
+    transform: scale(1.05);
+}
+
+.milestone-card {
+    min-width: 0;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .milestone-card .milestone-icon {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .milestone-card .milestone-icon {
+        height: 200px;
+    }
+}
+
+
+
+.home1 .section-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s ease;
+}
+
+.home1 .section-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.home1 .card-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+    transition-delay: var(--card-delay, 0ms);
+}
+
+.home1 .card-reveal.is-visible,
+.home1 .section-reveal.is-visible .card-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.home1 .hero-image img,
+.home1 .communication-icon img,
+.home1 .milestone-icon img,
+.home1 .approach-image img,
+.home1 .everyday-card img,
+.home1 .welcome-image img {
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+.home1 img.image-loaded {
+    opacity: 1;
+}
+
+
+
+.home1 section[id] {
+    scroll-margin-top: 100px;
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    .home1 .section-reveal,
+    .home1 .card-reveal,
+    .home1 img {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        animation: none;
+    }
+}

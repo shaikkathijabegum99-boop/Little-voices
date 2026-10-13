@@ -2393,8 +2393,8 @@ body[dir="rtl"] .home2 .home2-visit-footer {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    min-height: 54px;
-    padding: 10px 19px;
+    min-height: 34px;
+    padding: 12px 20px;
     border: 1px solid var(--primary-color);
     border-radius: 10px;
     font-size: 14px;

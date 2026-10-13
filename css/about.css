@@ -839,9 +839,7 @@ html[dir="rtl"] .about-page .about-hero-points {
     font-weight: 700;
 }
 
-.about-team-social i {
-    color: var(--primary-color, #159C8D);
-}
+
 
 
 .about-testimonials {
@@ -1387,18 +1385,7 @@ html[dir="rtl"] .about-page .about-mission-vision {
     width: 100%;
     padding: 95px 20px;
     overflow: hidden;
-    background:
-        radial-gradient(
-            circle at 10% 15%,
-            rgba(21, 156, 141, 0.12),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 90% 85%,
-            rgba(242, 140, 140, 0.13),
-            transparent 30%
-        ),
-        var(--bg, #f3f8f7);
+  
 }
 
 .about-final-cta .about-container {
@@ -1415,7 +1402,7 @@ html[dir="rtl"] .about-page .about-mission-vision {
     text-align: center;
     border: 1px solid var(--border, #dce9e6);
     border-radius: 30px;
-    background: var(--surface, #ffffff);
+  
     box-shadow: 0 20px 60px rgba(15, 70, 65, 0.08);
 }
 
@@ -1444,7 +1431,7 @@ html[dir="rtl"] .about-page .about-mission-vision {
 .about-cta-content h2 {
     max-width: 750px;
     margin: 0 auto 20px;
-    color: var(--text, #263a38);
+  
     font-family: "Nunito", sans-serif;
     font-size: clamp(30px, 4vw, 46px);
     font-weight: 800;
@@ -1459,7 +1446,7 @@ html[dir="rtl"] .about-page .about-mission-vision {
 .about-cta-content > p {
     max-width: 690px;
     margin: 0 auto;
-    color: var(--muted, #687b78);
+  
     font-size: 16px;
     line-height: 1.9;
 }
@@ -1477,7 +1464,7 @@ html[dir="rtl"] .about-page .about-mission-vision {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--text, #263a38);
+  
     font-size: 13px;
     font-weight: 700;
 }
@@ -1498,12 +1485,12 @@ html[dir="rtl"] .about-page .about-mission-vision {
 .about-cta-btn,
 .about-cta-secondary {
     display: inline-flex;
-    min-height: 52px;
+    min-height: 34px;
     align-items: center;
     justify-content: center;
     gap: 11px;
-    padding: 14px 23px;
-    border-radius: 12px;
+    padding: 12px 20px;
+    border-radius: 10px;
     font-size: 14px;
     font-weight: 800;
     text-decoration: none;
@@ -1528,7 +1515,7 @@ html[dir="rtl"] .about-page .about-mission-vision {
 }
 
 .about-cta-secondary {
-    border: 1px solid var(--border, #dce9e6);
+    border: 1px solid var(--border,var(--primary-color));
     background: var(--surface, #ffffff);
     color: var(--text, #263a38);
 }
@@ -1545,7 +1532,7 @@ html[dir="rtl"] .about-page .about-mission-vision {
     align-items: center;
     gap: 9px;
     margin-top: 28px;
-    color: var(--muted, #687b78);
+  
     font-size: 13px;
 }
 

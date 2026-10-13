@@ -388,7 +388,7 @@
 .therapist-card-image img {
     display: block;
     width: 100%;
-    height: 100%;
+   
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -592,9 +592,6 @@
     font-weight: 800;
 }
 
-.approach-step:nth-child(even) .approach-step-number {
-    color: var(--secondary-color);
-}
 
 .approach-step h3 {
     margin-bottom: 6px;

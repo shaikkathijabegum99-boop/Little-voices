@@ -2454,7 +2454,7 @@ body.rtl .pricing-support-content,
 .pricing-intro-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     min-width: 0;
     padding: 30px 27px;
     background: #FFFFFF;
@@ -2913,4 +2913,160 @@ body.rtl .pricing-intro-btn i,
         transform: none;
         transition: none;
     }
+}/* PRICING INTRO CARD PARAGRAPH ALIGNMENT */
+.pricing-page .pricing-intro-card p {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* RTL SUPPORT */
+body.rtl .pricing-page .pricing-intro-card p,
+[dir="rtl"] .pricing-page .pricing-intro-card p {
+    text-align: center;
+}
+/* PRICING PACKAGE GRID — CENTER ALIGNMENT */
+
+.pricing-page .pricing-packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    justify-items: stretch;
+    gap: 24px;
+}
+
+.pricing-page .pricing-package-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.pricing-page .pricing-package-icon {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-page .pricing-package-card h3,
+.pricing-page .pricing-package-card > p {
+    width: 100%;
+    text-align: center;
+}
+
+.pricing-page .pricing-package-price {
+    width: 100%;
+    text-align: center;
+}
+
+.pricing-page .pricing-package-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .pricing-page .pricing-packages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+    .pricing-page .pricing-packages-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .pricing-page .pricing-package-card {
+        padding: 25px 22px;
+    }
+}
+
+/* RTL SUPPORT */
+body.rtl .pricing-page .pricing-package-card,
+.rtl .pricing-page .pricing-package-card,
+[dir="rtl"] .pricing-page .pricing-package-card {
+    text-align: center;
+}
+
+body.rtl .pricing-page .pricing-package-link,
+.rtl .pricing-page .pricing-package-link,
+[dir="rtl"] .pricing-page .pricing-package-link {
+    justify-content: center;
+}
+
+/* PRICING BENEFITS GRID — CENTER ALIGNMENT */
+
+.pricing-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.pricing-benefit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 28px 22px;
+}
+
+.pricing-benefit-card .benefit-icon,
+.pricing-benefit-card .benefit-icon i,
+.pricing-benefit-card .benefit-icon svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-benefit-card h3,
+.pricing-benefit-card h4,
+.pricing-benefit-card p {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-benefit-card p {
+    line-height: 1.7;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .pricing-benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .pricing-benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .pricing-benefit-card {
+        padding: 22px 18px;
+    }
+}
+
+/* RTL support */
+[dir="rtl"] .pricing-benefit-card {
+    text-align: center;
 }

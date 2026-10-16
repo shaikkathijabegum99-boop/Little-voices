@@ -178,27 +178,68 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
+/* =========================================
+   ACTIVE NAVIGATION LINKS — LIVE SERVER FIX
+   ========================================= */
 
-    const currentPage =
-        window.location.pathname.split("/").pop() || "index.html";
+const currentPage = (
+    window.location.pathname.split("/").pop() || "index.html"
+).toLowerCase();
 
-    const activeClasses = {
-        "index.html": ".nav-item-home",
-        "home2.html": ".nav-item-home",
-        "about.html": ".nav-item-about",
-        "services.html": ".nav-item-services",
-        "therapists.html": ".nav-item-therapists",
-        "pricing.html": ".nav-item-Pricing",
-        "contact.html": ".nav-item-contact"
-    };
+const activeClasses = {
+    "index.html": ".nav-item-home",
+    "home2.html": ".nav-item-home",
+    "about.html": ".nav-item-about",
+    "services.html": ".nav-item-services",
+    "therapists.html": ".nav-item-therapists",
+    "pricing.html": ".nav-item-pricing",
+    "contact.html": ".nav-item-contact"
+};
 
-    const activeSelector = activeClasses[currentPage];
+/* Remove previously assigned active classes */
+document.querySelectorAll(".nav-links a.active").forEach(function (link) {
+    link.classList.remove("active");
+});
 
-    if (activeSelector) {
-        document.querySelectorAll(activeSelector).forEach(function (link) {
-            link.classList.add("active");
-        });
+/* Activate the matching main navigation link */
+const activeSelector = activeClasses[currentPage];
+
+if (activeSelector) {
+    document.querySelectorAll(activeSelector).forEach(function (link) {
+        link.classList.add("active");
+    });
+}
+
+/* Also support direct page links and nested page folders */
+document.querySelectorAll(".nav-links a[href]").forEach(function (link) {
+    const rawHref = link.getAttribute("href");
+
+    if (
+        !rawHref ||
+        rawHref.startsWith("#") ||
+        rawHref.startsWith("mailto:") ||
+        rawHref.startsWith("tel:") ||
+        rawHref.startsWith("javascript:")
+    ) {
+        return;
     }
+
+    let linkPage;
+
+    try {
+        linkPage = new URL(rawHref, window.location.href)
+            .pathname
+            .split("/")
+            .pop()
+            .toLowerCase();
+    } catch (error) {
+        return;
+    }
+
+    if (linkPage && linkPage === currentPage) {
+        link.classList.add("active");
+    }
+});
 
 
     window.addEventListener("resize", function () {

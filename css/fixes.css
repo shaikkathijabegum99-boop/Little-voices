@@ -1749,3 +1749,46 @@ html.light-mode #main-footer .legal-links .sep {
     outline: 3px solid #F6C85F;
     outline-offset: 3px;
 }
+/* =========================================
+   ACTIVE NAVIGATION LINK UNDERLINE
+   ========================================= */
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: var(--primary, #159C8D);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+/* RTL support */
+html[dir="rtl"] .nav-links a::after {
+    transform-origin: right;
+}
+
+/* Dropdown submenu links */
+.nav-links .dropdown-menu a::after {
+    bottom: 0;
+}
+
+/* Mobile navigation */
+@media (max-width: 1024px) {
+    .nav-links a::after {
+        bottom: 0;
+    }
+}

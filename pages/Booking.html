@@ -15,7 +15,7 @@
 
     <link
         rel="icon"
-        href="/images/little-voices-logo1.png"
+        href="../images/little-voices-logo1.png"
         type="image/png"
     >
 
@@ -32,7 +32,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
-    <link rel="stylesheet" href="/css/fixes.css">
+    <link rel="stylesheet" href="../css/fixes.css">
   
    
 
@@ -881,6 +881,314 @@
         margin-top: 3px;
         font-size: 8px;
     }
+}/* =========================================
+   BOOKING PAGE — THEME & RTL CONTROLS
+   ========================================= */
+
+.booking-page-controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.booking-control-btn {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    border: 1px solid var(--booking-border);
+    border-radius: 10px;
+    background: var(--booking-surface-light);
+    color: var(--booking-text);
+    font-family: var(--booking-font-body);
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.booking-control-btn:hover {
+    background: var(--booking-primary);
+    border-color: var(--booking-primary);
+    color: #ffffff;
+}
+
+.booking-control-btn:focus-visible {
+    outline: 3px solid var(--booking-primary);
+    outline-offset: 3px;
+}
+
+/* Keep room for the top controls */
+
+.booking-modal-box > .logo {
+    margin-top: 8px;
+}
+
+/* =========================================
+   DARK MODE
+   ========================================= */
+
+body.dark-mode {
+    --booking-bg: #0B1718;
+    --booking-surface: #122526;
+    --booking-surface-light: #1B3535;
+    --booking-primary: #35BBAA;
+    --booking-primary-dark: #259C8E;
+    --booking-text: #E8F5F2;
+    --booking-muted: #A5BCB8;
+    --booking-border: #2B4847;
+    --booking-input: #102021;
+    --booking-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(53, 187, 170, 0.10),
+            transparent 35%
+        ),
+        var(--booking-bg);
+
+    color: var(--booking-text);
+}
+
+body.dark-mode .booking-modal-overlay {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .booking-modal-box {
+    background: var(--booking-surface);
+    border-color: var(--booking-border);
+}
+
+body.dark-mode .booking-modal-close,
+body.dark-mode .booking-control-btn {
+    background: var(--booking-surface-light);
+    border-color: var(--booking-border);
+    color: var(--booking-text);
+}
+
+body.dark-mode .booking-modal-close:hover,
+body.dark-mode .booking-control-btn:hover {
+    background: var(--booking-primary);
+    border-color: var(--booking-primary);
+    color: #ffffff;
+}
+
+body.dark-mode .booking-modal-box > .logo .logo-text {
+    color: var(--booking-text);
+}
+
+body.dark-mode .booking-modal-box > .logo .logo-text span {
+    color: var(--booking-primary);
+}
+
+body.dark-mode .booking-modal-box > .logo .logo-subtitle {
+    color: var(--booking-muted);
+}
+
+body.dark-mode .booking-modal-header h2,
+body.dark-mode .form-group label {
+    color: var(--booking-text);
+}
+
+body.dark-mode .booking-modal-header .eyebrow,
+body.dark-mode .booking-modal-header h2 span {
+    color: var(--booking-primary);
+}
+
+body.dark-mode .booking-modal-header p,
+body.dark-mode .booking-privacy {
+    color: var(--booking-muted);
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background: var(--booking-input);
+    border-color: var(--booking-border);
+    color: var(--booking-text);
+    color-scheme: dark;
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: #91AAA6;
+}
+
+body.dark-mode .form-group select option {
+    background: var(--booking-input);
+    color: var(--booking-text);
+}
+
+body.dark-mode .booking-urgent {
+    background: #302323;
+    border-color: #694343;
+    color: #F5E5E3;
+}
+
+body.dark-mode .booking-submit {
+    background: var(--booking-primary);
+    border-color: var(--booking-primary);
+    color: #071C1A;
+}
+
+body.dark-mode .booking-submit:hover {
+    background: var(--booking-primary-dark);
+    border-color: var(--booking-primary-dark);
+    color: #ffffff;
+}
+
+/* =========================================
+   RTL / LTR LAYOUT
+   ========================================= */
+
+html[dir="rtl"] body.booking-page-body {
+    direction: rtl;
+}
+
+html[dir="rtl"] .booking-modal-close {
+    right: auto;
+    left: 20px;
+}
+
+html[dir="rtl"] .booking-page-controls {
+    left: auto;
+    right: 20px;
+}
+
+html[dir="rtl"] .booking-modal-box > .logo > a {
+    flex-direction: row;
+}
+
+html[dir="rtl"] .booking-modal-box > .logo .logo-content {
+    align-items: flex-start;
+    text-align: right;
+}
+
+html[dir="rtl"] .booking-modal-header,
+html[dir="rtl"] .booking-modal-header h2,
+html[dir="rtl"] .booking-modal-header p {
+    text-align: center;
+}
+
+html[dir="rtl"] .form-group {
+    text-align: right;
+}
+
+html[dir="rtl"] .form-group input,
+html[dir="rtl"] .form-group select,
+html[dir="rtl"] .form-group textarea {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .booking-urgent {
+    flex-direction: row;
+}
+
+html[dir="rtl"] .booking-submit {
+    direction: rtl;
+}
+
+/* =========================================
+   MOBILE CONTROLS
+   ========================================= */
+
+@media (max-width: 600px) {
+    .booking-page-controls {
+        top: 14px;
+        left: 14px;
+        gap: 6px;
+    }
+
+    .booking-control-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        font-size: 12px;
+    }
+
+    .booking-modal-box > .logo {
+        margin-top: 12px;
+    }
+
+    html[dir="rtl"] .booking-page-controls {
+        left: auto;
+        right: 14px;
+    }
+
+    html[dir="rtl"] .booking-modal-close {
+        right: auto;
+        left: 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    .booking-page-controls {
+        top: 12px;
+        left: 12px;
+        gap: 5px;
+    }
+
+    .booking-control-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+    }
+
+    .booking-modal-box > .logo {
+        margin-top: 14px;
+    }
+
+    html[dir="rtl"] .booking-page-controls {
+        left: auto;
+        right: 12px;
+    }
+
+    html[dir="rtl"] .booking-modal-close {
+        left: 12px;
+    }
+}
+
+/* Respect the desktop close-button position */
+
+@media screen and (min-width: 1025px) {
+    .booking-page-controls {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+    }
+
+    .booking-control-btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 7px;
+        font-size: 11px;
+    }
+
+    .booking-modal-box > .logo {
+        margin-top: 0;
+    }
+
+    html[dir="rtl"] .booking-page-controls {
+        left: auto;
+        right: 10px;
+    }
+
+    html[dir="rtl"] .booking-modal-close {
+        right: auto;
+        left: 10px;
+    }
 }
 
 
@@ -907,12 +1215,35 @@
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="bookingModalTitle"
-            >
+            ><!-- Theme and Direction Toggles -->
+<div class="booking-page-controls">
+
+    <button
+        type="button"
+        class="booking-control-btn"
+        id="bookingThemeToggle"
+        aria-label="Switch to dark mode"
+        title="Toggle dark mode"
+    >
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+    </button>
+
+    <button
+        type="button"
+        class="booking-control-btn"
+        id="bookingRtlToggle"
+        aria-label="Switch to right-to-left layout"
+        title="Toggle RTL/LTR"
+    >
+        <span>LTR</span>
+    </button>
+
+</div>
 
                 <a
                     aria-label="Back to home"
                     class="booking-modal-close"
-                    href="/index.html"
+                    href="../index.html"
                     id="closeBooking"
                 >
                     <i class="fa-solid fa-xmark"></i>
@@ -920,9 +1251,9 @@
 
         
 <div class="logo">
-    <a href="/index.html" aria-label="Little Voices Home">
+    <a href="../index.html" aria-label="Little Voices Home">
         <img
-            src="/images/little-voices-logo1.png"
+            src="../images/little-voices-logo1.png"
             alt="Little Voices Speech and Language Therapy"
             class="logo-img"
             width="48"
@@ -1198,7 +1529,102 @@
                 dateInput.min = localDate;
             }
         });
-    </script>
+        
+document.addEventListener("DOMContentLoaded", function () {
+    const themeToggle = document.getElementById("bookingThemeToggle");
+    const rtlToggle = document.getElementById("bookingRtlToggle");
+    const themeIcon = themeToggle.querySelector("i");
+    const rtlText = rtlToggle.querySelector("span");
+
+    const root = document.documentElement;
+    const body = document.body;
+
+    // Load saved preferences
+    function getPreference(key, fallback) {
+        try {
+            const value = localStorage.getItem(key);
+            return value === null ? fallback : value;
+        } catch (error) {
+            return fallback;
+        }
+    }
+
+    // Apply light or dark mode
+    function applyTheme(theme) {
+        const isDark = theme === "dark";
+
+        body.classList.toggle("dark-mode", isDark);
+
+        themeIcon.className = isDark
+            ? "fa-solid fa-sun"
+            : "fa-solid fa-moon";
+
+        themeToggle.setAttribute(
+            "aria-label",
+            isDark ? "Switch to light mode" : "Switch to dark mode"
+        );
+
+        themeToggle.title = isDark
+            ? "Switch to light mode"
+            : "Switch to dark mode";
+
+        try {
+            localStorage.setItem("littleVoicesBookingTheme", theme);
+        } catch (error) {
+            // The toggle still works if storage is unavailable.
+        }
+    }
+
+    // Apply RTL or LTR direction
+    function applyDirection(direction) {
+        const isRTL = direction === "rtl";
+
+        root.setAttribute("dir", isRTL ? "rtl" : "ltr");
+        rtlText.textContent = isRTL ? "RTL" : "LTR";
+
+        rtlToggle.setAttribute(
+            "aria-label",
+            isRTL
+                ? "Switch to left-to-right layout"
+                : "Switch to right-to-left layout"
+        );
+
+        rtlToggle.title = isRTL
+            ? "Switch to LTR"
+            : "Switch to RTL";
+
+        try {
+            localStorage.setItem("littleVoicesBookingDirection", direction);
+        } catch (error) {
+            // The toggle still works if storage is unavailable.
+        }
+    }
+
+    // Restore saved settings
+    applyTheme(
+        getPreference("littleVoicesBookingTheme", "light")
+    );
+
+    applyDirection(
+        getPreference("littleVoicesBookingDirection", "ltr")
+    );
+
+    // Toggle theme
+    themeToggle.addEventListener("click", function () {
+        const isDark = body.classList.contains("dark-mode");
+
+        applyTheme(isDark ? "light" : "dark");
+    });
+
+    // Toggle text direction
+    rtlToggle.addEventListener("click", function () {
+        const isRTL = root.getAttribute("dir") === "rtl";
+
+        applyDirection(isRTL ? "ltr" : "rtl");
+    });
+});
+</script>
+  
 
 </body>
 </html>

@@ -561,7 +561,7 @@ html[dir="rtl"] .about-page .about-hero-points {
 
 @media (max-width: 1024px) {
     .about-page section {
-        padding: 75px 0;
+        padding: 95px 0;
     }
 
     .about-hero-grid {
@@ -608,7 +608,7 @@ html[dir="rtl"] .about-page .about-hero-points {
     }
 
     .about-hero {
-        padding: 45px 0 55px !important;
+        padding: 85px 0 55px !important;
     }
 
     .about-hero-grid,
@@ -1002,7 +1002,7 @@ body.dark .about-testimonial-author h3 {
     }
 
     .about-team-image {
-        height: 280px;
+        height: 390px;
     }
 
     .about-team-info {

@@ -230,4 +230,18 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+});/* =========================================
+   ACTIVE NAVIGATION LINK UNDERLINE
+   ========================================= */
+
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+    const href = link.getAttribute("href");
+
+    if (!href) return;
+
+    const linkPage = href.split("/").pop().split("?")[0].split("#")[0];
+
+    if (linkPage && linkPage === currentPage) {
+        link.classList.add("active");
+    }
 });

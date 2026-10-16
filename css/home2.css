@@ -1865,7 +1865,7 @@ body[dir="rtl"] .home2 .home2-visit-footer {
     .home2 .home2-hero-layout {
         grid-template-columns: 1fr;
         gap: 40px;
-        padding-top: 15px;
+        padding-top: 65px;
         padding-bottom: 45px;
     }
 
